@@ -19,12 +19,8 @@ namespace GT
         [Tooltip("Maximum speed that a Player can achieve"), Range(1f, 500f)]
         public float maxSpeed = 15f;
         public float rotationSpeed = 15f;
-<<<<<<< Updated upstream:Assets/Code/Scripts/PlayerInput.cs
-        //public float steeringPower = 15f;
-        //public float steeringAmount = 15;
-=======
+
         public float maxRotationSpeed;
->>>>>>> Stashed changes:Assets/Code/Scripts/Player/PlayerInput.cs
 
         private Rigidbody2D _playerBody;
         private Vector2 _move;
@@ -74,31 +70,10 @@ namespace GT
         {
 
             Vector3 rotatePlayer = new Vector3(0, 0, -_rotate.x) * Time.deltaTime;
-<<<<<<< Updated upstream:Assets/Code/Scripts/PlayerInput.cs
-            //var direction = Mathf.Sign(Vector2.Dot(_playerBody.velocity, _playerBody.GetRelativeVector(Vector2.up)));
-            //_playerBody.rotation += steeringAmount * steeringPower * _playerBody.velocity.magnitude * direction;
-            //Debug.Log("rotating: " + _rotate);
-            //_playerBody.AddRelativeForce(rotatePlayer * _playerBody.velocity.magnitude * steeringAmount / 2);
+
             transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
-            //_playerBody.rotation (-rotatePlayer * _playerBody.magnitude * steerinAmount / 2)
-=======
 
-
-            //transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
             _playerBody.AddTorque(_rotate.x * rotationSpeed);
-            //_playerBody.angularVelocity = Vector2.ClampMagnitude(_playerBody.angularVelocity, maxRotationSpeed);
-            /*
-            if (_rotate.x > 0)
-            {
-                _playerBody.AddTorque(_rotate.x * rotationSpeed);
-            }
-            else if (_rotate.x < 0)
-            {
-                _playerBody.AddTorque(-_rotate.x * rotationSpeed);
-            }
-            */
->>>>>>> Stashed changes:Assets/Code/Scripts/Player/PlayerInput.cs
         }
     }
-
 }
