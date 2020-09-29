@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Weapon : MonoBehaviour
 {
+    public InputAction fireWeapon; // Add this to input
+
     public bool isHaveBullets = false;
     public int maxAmountOfBullets = 6;
     public int currentAmountOfBullets = 6;
@@ -33,7 +36,6 @@ public class Weapon : MonoBehaviour
     private float _timeSinceLastShot;
     private Transform _transform;
     private Coroutine _shootingCoroutine;
-    private Camera _Camera;
 
     public bool IsShooting { get; private set; } = false;
 
@@ -53,9 +55,24 @@ public class Weapon : MonoBehaviour
         weaponParticleSystem = GetComponentInChildren<ParticleSystem>();
 
         _timeBetweenShots = 60f / roundsPerMinute;
-        _Camera = Camera.main;
+
+        // Move this to Input script later.
+        fireWeapon.performed += ctx => StartShooting();
+        fireWeapon.canceled += ctx => StopShooting();
     }
 
+    // Move this to Input script later.
+    void OnEnable()
+    {
+        fireWeapon.Enable();
+    }
+
+    void OnDisable()
+    {
+        fireWeapon.Disable();
+    }
+
+    //
     private void LateUpdate()
     {
         if (isWeaponAim)
