@@ -223,11 +223,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456097647932668744, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
       propertyPath: maxSpeed
-      value: 328
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2456097647932668744, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
       propertyPath: rotationSpeed
-      value: 100
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456097647932668744, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
+      propertyPath: speed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456097647932668744, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
+      propertyPath: maxVelocity
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2456097647932668745, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
       propertyPath: m_Name

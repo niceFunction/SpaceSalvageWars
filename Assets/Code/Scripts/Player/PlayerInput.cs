@@ -17,10 +17,10 @@ namespace GT
         PlayerControls controls;
 
         [Tooltip("Maximum speed that a Player can achieve"), Range(1f, 500f)]
-        public float maxSpeed = 15f;
+        public float speed = 15f;
         public float rotationSpeed = 15f;
-
-        public float maxRotationSpeed;
+        public float maxVelocity = 15f;
+        //public float maxRotationSpeed;
 
         private Rigidbody2D _playerBody;
         private Vector2 _move;
@@ -47,6 +47,13 @@ namespace GT
             controls.Gameplay.Disable();
         }
 
+        private void OnGUI()
+        {
+            #if UNITY_EDITOR
+            GUILayout.Label("Ship velocity: " + _playerBody.velocity);
+            #endif
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -63,16 +70,14 @@ namespace GT
         {
             Vector2 movePlayer = new Vector2(_move.x, _move.y) * Time.deltaTime;
 
-            _playerBody.AddForce(movePlayer * maxSpeed);
+            _playerBody.AddForce(movePlayer * (speed * 2));
+            _playerBody.velocity = Vector2.ClampMagnitude(_playerBody.velocity, maxVelocity);
         }
 
         void PlayerRotate()
         {
 
             Vector3 rotatePlayer = new Vector3(0, 0, -_rotate.x) * Time.deltaTime;
-
-            //transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
-
             _playerBody.AddTorque(_rotate.x * rotationSpeed);
         }
     }

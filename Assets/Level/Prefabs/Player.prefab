@@ -47,7 +47,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -66,8 +66,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b95d7a1621b0f945b97d73d78140fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 30
-  rotationSpeed: 500
+  speed: 500
+  rotationSpeed: 75
+  maxVelocity: 50
 --- !u!1 &2456097648774586064
 GameObject:
   m_ObjectHideFlags: 0
