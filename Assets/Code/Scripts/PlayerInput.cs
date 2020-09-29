@@ -60,11 +60,8 @@ namespace GT
         void PlayerMove()
         {
             Vector2 movePlayer = new Vector2(_move.x, _move.y) * Time.deltaTime;
-            //transform.Translate(movePlayer * maxSpeed, Space.World);
-            Debug.Log("Moving: " + _move.y);
 
             _playerBody.AddForce(movePlayer * maxSpeed);
-            Debug.Log(movePlayer * maxSpeed);
         }
 
         void PlayerRotate()
