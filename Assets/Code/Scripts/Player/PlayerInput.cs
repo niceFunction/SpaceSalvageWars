@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 // GT = Group Two
 namespace GT
 {
+
+    //https://www.youtube.com/watch?v=dnNCVcVS6uw
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerInput : MonoBehaviour
     {
@@ -17,8 +19,8 @@ namespace GT
         [Tooltip("Maximum speed that a Player can achieve"), Range(1f, 500f)]
         public float maxSpeed = 15f;
         public float rotationSpeed = 15f;
-        //public float steeringPower = 15f;
-        //public float steeringAmount = 15;
+
+        public float maxRotationSpeed;
 
         private Rigidbody2D _playerBody;
         private Vector2 _move;
@@ -68,13 +70,10 @@ namespace GT
         {
 
             Vector3 rotatePlayer = new Vector3(0, 0, -_rotate.x) * Time.deltaTime;
-            //var direction = Mathf.Sign(Vector2.Dot(_playerBody.velocity, _playerBody.GetRelativeVector(Vector2.up)));
-            //_playerBody.rotation += steeringAmount * steeringPower * _playerBody.velocity.magnitude * direction;
-            //Debug.Log("rotating: " + _rotate);
-            //_playerBody.AddRelativeForce(rotatePlayer * _playerBody.velocity.magnitude * steeringAmount / 2);
-            transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
-            //_playerBody.rotation (-rotatePlayer * _playerBody.magnitude * steerinAmount / 2)
+
+            //transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
+
+            _playerBody.AddTorque(_rotate.x * rotationSpeed);
         }
     }
-
 }
