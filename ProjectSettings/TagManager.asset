@@ -13,19 +13,19 @@ TagManager:
   - UI
   - 
   - 
-  - Player1
-  - Player2
-  - Player3
-  - Player4
+  - Players
+  - 
+  - PlayerBullets
   - 
   - Asteroids
   - 
   - Collectibles
   - 
-  - Player1Bullets
-  - Player2Bullets
-  - Player3Bullets
-  - Player4Bullets
+  - PlayerBoundaries
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

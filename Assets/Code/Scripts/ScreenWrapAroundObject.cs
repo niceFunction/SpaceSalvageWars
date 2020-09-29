@@ -16,7 +16,6 @@ public class ScreenWrapAroundObject : MonoBehaviour
 
         screenHeightUnits += _colliderExtents.y;
         screenWidthUnits += _colliderExtents.x;
-        Debug.Log(_colliderExtents);
     }
 
     void Update()
