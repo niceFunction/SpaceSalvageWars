@@ -26,10 +26,18 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        if(objectToSpawn == null)
+        {
+            return;
+        }
         StartCoroutine("SpawnTimer");
     }
     void OnEnable()
     {
+        if (objectToSpawn == null)
+        {
+            return;
+        }
         StartCoroutine("SpawnTimer");
     }
 

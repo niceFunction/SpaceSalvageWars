@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 6274763129388146712}
   - component: {fileID: 6274763129388146713}
   - component: {fileID: 6274763129388146718}
+  - component: {fileID: 7817552171319342018}
   - component: {fileID: 6274763129388146715}
   - component: {fileID: 6274763129388146719}
   - component: {fileID: 6274763129388146714}
-  m_Layer: 0
-  m_Name: Asteroid
+  - component: {fileID: 6565275341610881381}
+  m_Layer: 13
+  m_Name: AsteroidBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 008897800dd53e74890ddb3838bb3d46, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.41611814, a: 1}
+  m_Sprite: {fileID: -7385812837421921265, guid: 6f01ce28cc99f1b44bdd44eae0d0bb45, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,6 +109,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7817552171319342018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274763129388146716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba58416e9d2cab4dbd86915ee2edc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  isDestructible: 1
+  asteroidsToSpawnOnDeath: []
+  asteroidsToSpawnOffsets: []
+  collectibleObjectDrop: {fileID: 0}
 --- !u!114 &6274763129388146715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +168,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomTorqueMinMax: {x: -15, y: 15}
+--- !u!60 &6565275341610881381
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274763129388146716}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.16146183, y: 1.0043573}
+      - {x: -0.99094915, y: 0.40234423}
+      - {x: -0.65616226, y: -0.44970953}
+      - {x: -0.78134584, y: -0.68902445}
+      - {x: -0.47705698, y: -0.99354756}
+      - {x: 0.3073268, y: -0.8107996}
+      - {x: 0.66072726, y: -0.86570525}
+      - {x: 0.97234845, y: -0.34226358}
+      - {x: 0.99842906, y: 0.55003065}
+      - {x: 0.5724089, y: 0.8056404}

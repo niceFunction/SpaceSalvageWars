@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    public int Maxhealth;
+    public int maxHealth;
     public int currentHealth;
 
     public int ChangeHealth(int healthToChange)
     {
         currentHealth += healthToChange;
+
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
         if(currentHealth <= 0)
         {
-            Destroy(gameObject);
+            OnDeath();
         }
         return currentHealth;
     }
 
-    public virtual void OnDestroy()
+    public virtual void OnDeath()
     {
         // Do stuff! Explosions
     }
