@@ -283,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2456097647932668751, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
       propertyPath: m_AngularDrag
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2456097648490808604, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
       propertyPath: m_LocalScale.x
