@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class StandardBullet : MonoBehaviour
 {
+    public int playerId;
+
     public float bulletSpeed = 100f;
     public float bulletLifeTime = 1f;
 
