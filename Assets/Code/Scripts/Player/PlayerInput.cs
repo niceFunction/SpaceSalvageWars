@@ -71,7 +71,7 @@ namespace GT
 
             Vector3 rotatePlayer = new Vector3(0, 0, -_rotate.x) * Time.deltaTime;
 
-            transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
+            //transform.Rotate(rotatePlayer * rotationSpeed, Space.World);
 
             _playerBody.AddTorque(_rotate.x * rotationSpeed);
         }
