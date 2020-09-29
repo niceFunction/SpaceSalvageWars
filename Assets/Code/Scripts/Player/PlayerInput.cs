@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 namespace GT
 {
 
-    //https://www.youtube.com/watch?v=dnNCVcVS6uw
+    //Nice grappling hook with code & tutorial how to use it: https://www.youtube.com/watch?v=dnNCVcVS6uw
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerInput : MonoBehaviour
     {
