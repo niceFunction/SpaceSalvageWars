@@ -1062,6 +1062,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6274763129388146715, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
+      propertyPath: screenWidthUnits
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274763129388146715, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
+      propertyPath: screenHeightUnits
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6274763129388146716, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
       propertyPath: m_Name
       value: AsteroidBig_Destructible
