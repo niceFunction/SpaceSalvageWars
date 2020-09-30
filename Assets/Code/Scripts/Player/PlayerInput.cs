@@ -82,6 +82,7 @@ namespace GT
             {
                 if (_grapple.hookBody != null)
                 {
+                    //TODO Attach springjoint to Player, find how to attach "Connected" RB to Hook or Asteroid
                     // Attach a springjoint between hookBody & Player (or asteroid)
                     // Keep in mind that a spring joint may be needed 
                     // to be between asteroid & player instead of hook & asteroid
@@ -128,8 +129,6 @@ namespace GT
                 Debug.Log("Destroying Hook");
                 Destroy(_hook);
             }
-            //TODO Maybe changed Hold action (Input Action) when fireing grapple to Tap again
-            //TODO and tap again to remove grapple hook
         }
 
         /*
