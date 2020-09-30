@@ -30,6 +30,9 @@ namespace GT
         [Tooltip("How fast will the hook be fired?"), Range(1f, 50)]
         public float hookForce = 20f;
 
+        private GameObject _hook;
+        private Grapple _grapple;
+
         private Rigidbody2D _playerBody;
         private Vector2 _move;
         private Vector3 _rotate;
@@ -45,6 +48,7 @@ namespace GT
             controls.Gameplay.Rotate.canceled += ctx => _rotate = Vector2.zero;
 
             controls.Gameplay.FireHook.performed += ctx => PlayerFireHook();
+            //controls.Gameplay.FireHook.canceled += ctx => ReleaseHook();
         }
 
         private void OnEnable()
@@ -61,6 +65,7 @@ namespace GT
         {
             #if UNITY_EDITOR
             GUILayout.Label("Ship velocity: " + _playerBody.velocity);
+            GUILayout.Label("Grapplehook: " + _hook);
             #endif
         }
 
@@ -73,7 +78,15 @@ namespace GT
 
         private void Update()
         {
-
+            if (_grapple != null)
+            {
+                if (_grapple.hookBody != null)
+                {
+                    // Attach a springjoint between hookBody & Player (or asteroid)
+                    // Keep in mind that a spring joint may be needed 
+                    // to be between asteroid & player instead of hook & asteroid
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -92,18 +105,45 @@ namespace GT
 
         void PlayerRotate()
         {
-
             Vector3 rotatePlayer = new Vector3(0, 0, -_rotate.x) * Time.deltaTime;
             _playerBody.AddTorque(_rotate.x * rotationSpeed);
         }
 
         void PlayerFireHook()
         {
-            GameObject hook = Instantiate(grappleHookPrefab,
-                                            grapplePointTransform.position,
-                                            grapplePointTransform.rotation);
-            Rigidbody2D hookBody = hook.GetComponent<Rigidbody2D>();
-            hookBody.AddForce(grapplePointTransform.right * hookForce, ForceMode2D.Impulse);
+            if(_hook == null)
+            {
+                Debug.Log("Firing Hook");
+                _hook = Instantiate(grappleHookPrefab,
+                                                grapplePointTransform.position,
+                                                grapplePointTransform.rotation);
+
+                _grapple = _hook.GetComponent<Grapple>();
+                
+                Rigidbody2D hookBody = _hook.GetComponent<Rigidbody2D>();
+                hookBody.AddForce(grapplePointTransform.right * hookForce, ForceMode2D.Impulse);
+            }
+            else if (_hook != null)
+            {
+                Debug.Log("Destroying Hook");
+                Destroy(_hook);
+            }
+            //TODO Maybe changed Hold action (Input Action) when fireing grapple to Tap again
+            //TODO and tap again to remove grapple hook
         }
+
+        /*
+        void ReleaseHook()
+        {
+            //Debug.Log("In Release Hook");
+            if(_hook != null)
+            {
+                Debug.Log("Cancelled");
+                Destroy(_hook);
+                _hook = null;
+            }
+
+        }
+        */
     }
 }

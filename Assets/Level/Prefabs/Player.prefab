@@ -220,7 +220,7 @@ MonoBehaviour:
   grappleRope: {fileID: 0}
   grappleHookPrefab: {fileID: 622367448619700145, guid: 02861ac9dad66ce418a011bb4196bd1a, type: 3}
   grapplePointTransform: {fileID: 5147069561505305349, guid: 1fe75e359bc539a4ba5fd0539282a208, type: 3}
-  hookForce: 20
+  hookForce: 50
 --- !u!1 &2456097648774586064
 GameObject:
   m_ObjectHideFlags: 0

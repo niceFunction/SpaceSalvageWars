@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8511007902726235693}
   - component: {fileID: 8144103597467758150}
   - component: {fileID: 192717057427863872}
-  - component: {fileID: 1351185156055433998}
   m_Layer: 0
   m_Name: GrappleHook
   m_TagString: Untagged
@@ -47,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae83d9e3b712294cb269b85860d3cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grabable:
+  grabable:
     serializedVersion: 2
     m_Bits: 4096
 --- !u!50 &8144103597467758150
@@ -87,26 +86,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
---- !u!231 &1351185156055433998
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622367448619700145}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 2456097647932668751, guid: 201abe2994c0d88469a9a21fa72b1d72, type: 3}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.5, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 1
 --- !u!1 &5494386946058513493
 GameObject:
   m_ObjectHideFlags: 0
