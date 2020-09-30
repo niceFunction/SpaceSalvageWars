@@ -8,12 +8,15 @@ namespace GT
     {
         [Tooltip("Reference the 'GrappleHook' prefab")]
         public GameObject grappleHook;
+        //public GameObject grapplePoint;
+        //public LineRenderer lineRenderer;
 
-        public LineRenderer lineRenderer;
+        private Vector2 _startRopePosition;
+        private Vector2 _endRopePosition;
         // Start is called before the first frame update
         void Start()
         {
-
+            //_startRopePosition = grapplePoint.transform.position;
         }
 
         // Update is called once per frame
@@ -22,7 +25,7 @@ namespace GT
 
         }
 
-        private void FireHook()
+        private void DrawRope()
         {
 
         }

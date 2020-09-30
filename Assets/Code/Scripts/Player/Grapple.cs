@@ -7,7 +7,11 @@ namespace GT
     public class Grapple : MonoBehaviour
     {
 
-        public LayerMask Grabable;
+        public LayerMask grabable;
+
+        //[Tooltip("Get the grapplehook point position")]
+        //public GameObject grappleHookPoint;
+        //public TrailRenderer grappleRopeTrail;
 
         // Start is called before the first frame update
         void Start()
@@ -19,6 +23,15 @@ namespace GT
         void Update()
         {
 
+        }
+
+        private void OnCollisionEnter2D(Collision2D collisionInfo)
+        {
+            if (collisionInfo.gameObject.layer == grabable)
+            {
+                Debug.Log("Collided with asteroid");
+                collisionInfo.gameObject.transform.parent = gra;
+            }
         }
     }
 }

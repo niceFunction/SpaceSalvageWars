@@ -17,11 +17,18 @@ namespace GT
 
         PlayerControls controls;
 
-        [Tooltip("Maximum speed that a Player can achieve"), Range(1f, 500f)]
+        [Header("Movement"), Tooltip("Maximum speed that a Player can achieve"), Range(1f, 500f)]
         public float speed = 15f;
         public float rotationSpeed = 15f;
         public float maxVelocity = 15f;
-        //public float maxRotationSpeed;
+
+        [Header("Grappling Hook")]
+        public GrappleRope grappleRope;
+        [Tooltip("Grapplehook prefarb that will be fired")]
+        public GameObject grappleHookPrefab;
+        public Transform grapplePointTransform;
+        [Tooltip("How fast will the hook be fired?"), Range(1f, 50)]
+        public float hookForce = 20f;
 
         private Rigidbody2D _playerBody;
         private Vector2 _move;
@@ -36,6 +43,8 @@ namespace GT
 
             controls.Gameplay.Rotate.performed += ctx => _rotate = ctx.ReadValue<Vector2>();
             controls.Gameplay.Rotate.canceled += ctx => _rotate = Vector2.zero;
+
+            controls.Gameplay.FireHook.performed += ctx => PlayerFireHook();
         }
 
         private void OnEnable()
@@ -59,6 +68,12 @@ namespace GT
         void Start()
         {
             _playerBody = GetComponent<Rigidbody2D>();
+
+        }
+
+        private void Update()
+        {
+
         }
 
         private void FixedUpdate()
@@ -80,6 +95,15 @@ namespace GT
 
             Vector3 rotatePlayer = new Vector3(0, 0, -_rotate.x) * Time.deltaTime;
             _playerBody.AddTorque(_rotate.x * rotationSpeed);
+        }
+
+        void PlayerFireHook()
+        {
+            GameObject hook = Instantiate(grappleHookPrefab,
+                                            grapplePointTransform.position,
+                                            grapplePointTransform.rotation);
+            Rigidbody2D hookBody = hook.GetComponent<Rigidbody2D>();
+            hookBody.AddForce(grapplePointTransform.right * hookForce, ForceMode2D.Impulse);
         }
     }
 }
