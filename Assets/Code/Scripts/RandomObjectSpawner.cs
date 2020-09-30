@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class RandomObjectSpawner : MonoBehaviour
 {
     public bool infiniteTimerLoop = true;
     public bool isOneShot = false;

@@ -20,46 +20,18 @@ public class StandardBullet : MonoBehaviour
     public bool isHitSpawnObjectRotateRandom;
 
     private Rigidbody2D _body;
-    private Transform _transform;
+    public Transform thisTransform;
 
 
-    private void Awake()
+    public virtual void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
-        _transform = transform;
+        thisTransform = transform;
 
-        _body.AddForce(_transform.right * bulletSpeed);
+        _body.AddForce(thisTransform.right * bulletSpeed);
         StartCoroutine("BulletLifeTimeCounter");
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<ActorPlayer>() != null)
-        {
-            var _actor = collision.gameObject.GetComponent<ActorPlayer>();
-            if (_actor.playerId == currentPlayerId) //Don't collide with this player
-            {
-                return;
-            }
-        }
-
-        GameObject hitSpawnObjectInstance = Instantiate(hitSpawnObject, _transform.position, _transform.rotation);
-        if (isHitSpawnObjectRotateFromHitNormal) // This doesn't completely work... OnCollisionWorks however
-        {
-            RaycastHit hit;
-            Debug.DrawRay(normalRayCastOffset.position, _transform.right * 2);
-            if (Physics.Raycast(normalRayCastOffset.position, _transform.right * 2, out hit))
-            {
-                hitSpawnObjectInstance.transform.rotation = Quaternion.FromToRotation(Vector3.right, hit.normal);
-                Debug.Log(hit.normal);
-            }
-        }
-        else if (isHitSpawnObjectRotateRandom)
-        {
-            hitSpawnObjectInstance.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
-        }
-        Destroy(gameObject);
-    }
 
     /* USE ON COLLISION INSTEAD OF TRIGGER
     public virtual void OnCollisionEnter2D(Collision2D other)

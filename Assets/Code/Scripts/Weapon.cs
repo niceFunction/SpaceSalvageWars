@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class Weapon : MonoBehaviour
 {
     public InputAction fireWeapon; // Add this to input
+    public bool isGrapplingHook;
+
 
     public bool isHaveBullets = false;
     public int maxAmountOfBullets = 6;
@@ -116,7 +118,10 @@ public class Weapon : MonoBehaviour
 
     public void StartShooting()
     {
-        //Early return statement
+        if (isGrapplingHook)
+        {
+            return;
+        }
         if (IsShooting)
         {
             return;

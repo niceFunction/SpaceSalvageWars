@@ -12,7 +12,7 @@ public class ActorPlayer : Actor
     public GameObject deathExplosion;
 
     //C# Delegate/Events
-    public delegate Event OnChangePlayerHealth();
+    public delegate void OnChangePlayerHealth();
     public event OnChangePlayerHealth OnChangeHealthHandler;
 
     public Rigidbody2D body;
