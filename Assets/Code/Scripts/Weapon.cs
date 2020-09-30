@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 public class Weapon : MonoBehaviour
 {
     public InputAction fireWeapon; // Add this to input
-    public bool isGrapplingHook;
-
+    public bool isGrapplingHookActivated;
 
     public bool isHaveBullets = false;
     public int maxAmountOfBullets = 6;
@@ -118,7 +117,7 @@ public class Weapon : MonoBehaviour
 
     public void StartShooting()
     {
-        if (isGrapplingHook)
+        if (isGrapplingHookActivated)
         {
             return;
         }
@@ -156,8 +155,18 @@ public class Weapon : MonoBehaviour
     {
         var _bulletSpawned = Instantiate(bulletToSpawn, spawnPoint.position, weaponSocket.rotation);
         var _bulletRB = _bulletSpawned.GetComponent<Rigidbody2D>();
-        var _bulletLaser = _bulletSpawned.GetComponent<Laser>();
-        _bulletLaser.currentPlayerId = _actor.playerId;
+        
+        if(_bulletSpawned.GetComponent<Laser>() != null)
+        {
+            var _bulletLaser = _bulletSpawned.GetComponent<Laser>();
+            _bulletLaser.currentPlayerId = _actor.playerId;
+        }
+        //if (isGrapplingHookBullet) DERIVED FROM TOOTH GAME GRAPPLING SYSTEM
+        //{
+        //    GrapplingHookBullet _grapplingHookBullet = _bulletSpawned.GetComponent<GrapplingHookBullet>();
+        //    _grapplingHookBullet.actorPlayer = _actor;
+        //}
+
 
         if (isBulletAimAt)
         {

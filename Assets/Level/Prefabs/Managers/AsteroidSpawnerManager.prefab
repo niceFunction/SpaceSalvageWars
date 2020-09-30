@@ -1,5 +1,211 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &272344296795337930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9211749207086101312}
+  m_Layer: 0
+  m_Name: Asteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9211749207086101312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272344296795337930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5424445592198400577}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1139961280236237394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6949367631628421126}
+  - component: {fileID: 2898960975181395538}
+  m_Layer: 0
+  m_Name: AsteroidIceSpawnerEast
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6949367631628421126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139961280236237394}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 892632386263525653}
+  m_Father: {fileID: 5532403939384135899}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2898960975181395538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139961280236237394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
+  infiniteTimerLoop: 1
+  isOneShot: 0
+  randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
+  randomObjectSpawnOffsetMinMaxX: {x: 0, y: 0}
+  randomObjectSpawnOffsetMinMaxY: {x: -2, y: 2}
+  objectsToSpawn:
+  - {fileID: 4710906307028860269, guid: bb02ff0dd9c2e014ab593bd60a536194, type: 3}
+  amountOfObjectsToSpawn: 1
+  spawnObjectsIntoContainer: 1
+  objectsSpawnerContainer: {fileID: 892632386263525653}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
+--- !u!1 &1705432243903282388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6840595090929409721}
+  m_Layer: 0
+  m_Name: Asteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6840595090929409721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705432243903282388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2422246927939235352}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2719702304076215423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4481959344438072134}
+  - component: {fileID: 2992227082594138670}
+  m_Layer: 0
+  m_Name: AsteroidIceSpawnerSouth
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4481959344438072134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719702304076215423}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1643001874960046013}
+  m_Father: {fileID: 5532403939384135899}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2992227082594138670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719702304076215423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
+  infiniteTimerLoop: 1
+  isOneShot: 0
+  randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
+  randomObjectSpawnOffsetMinMaxX: {x: -6, y: 6}
+  randomObjectSpawnOffsetMinMaxY: {x: 0, y: 0}
+  objectsToSpawn:
+  - {fileID: 4710906307028860269, guid: bb02ff0dd9c2e014ab593bd60a536194, type: 3}
+  amountOfObjectsToSpawn: 1
+  spawnObjectsIntoContainer: 1
+  objectsSpawnerContainer: {fileID: 1643001874960046013}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
+--- !u!1 &3430048536388180085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 892632386263525653}
+  m_Layer: 0
+  m_Name: Asteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &892632386263525653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430048536388180085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6949367631628421126}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3981298608153496352
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,10 +233,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3981298609024372815}
-  - {fileID: 3981298608823203600}
-  - {fileID: 3981298610117500541}
-  - {fileID: 3981298609512393031}
+  - {fileID: 65903927012153056}
+  - {fileID: 5532403939384135899}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,7 +279,7 @@ GameObject:
   - component: {fileID: 3981298608823203600}
   - component: {fileID: 3981298608823203601}
   m_Layer: 0
-  m_Name: AsteroidSpawnerSouth
+  m_Name: AsteroidHardSpawnerSouth
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -93,7 +297,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3981298609438879076}
-  m_Father: {fileID: 3981298608153496353}
+  m_Father: {fileID: 65903927012153056}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3981298608823203601
@@ -108,18 +312,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
   infiniteTimerLoop: 1
   isOneShot: 0
   randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
-  randomObjectSpawnOffsetMinMaxX: {x: -9, y: 9}
+  randomObjectSpawnOffsetMinMaxX: {x: -6, y: 6}
   randomObjectSpawnOffsetMinMaxY: {x: 0, y: 0}
   objectsToSpawn:
   - {fileID: 6274763129388146716, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
-  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
   - {fileID: 8678831975124373795, guid: b0e45425f0600774a9ff9fa30a9ab2a4, type: 3}
-  amountOfObjectsToSpawn: 1
+  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
+  - {fileID: 8058610955492501787, guid: ecb1417a021bf584f8460bd7e33bad68, type: 3}
+  - {fileID: 55728609361636037, guid: 397d5e97c4745b04289cc56373d2d53e, type: 3}
+  - {fileID: 9193446232947101317, guid: fed2f208f0c209f449d9452f67097387, type: 3}
+  amountOfObjectsToSpawn: 3
   spawnObjectsIntoContainer: 1
   objectsSpawnerContainer: {fileID: 3981298609438879076}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: 100, y: 350}
 --- !u!1 &3981298609024372814
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +342,7 @@ GameObject:
   - component: {fileID: 3981298609024372815}
   - component: {fileID: 3981298609024372808}
   m_Layer: 0
-  m_Name: AsteroidSpawnerNorth
+  m_Name: AsteroidHardSpawnerNorth
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -149,7 +360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3981298610163132279}
-  m_Father: {fileID: 3981298608153496353}
+  m_Father: {fileID: 65903927012153056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3981298609024372808
@@ -164,18 +375,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
   infiniteTimerLoop: 1
   isOneShot: 0
   randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
-  randomObjectSpawnOffsetMinMaxX: {x: -9, y: 9}
+  randomObjectSpawnOffsetMinMaxX: {x: -6, y: 6}
   randomObjectSpawnOffsetMinMaxY: {x: 0, y: 0}
   objectsToSpawn:
   - {fileID: 6274763129388146716, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
-  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
   - {fileID: 8678831975124373795, guid: b0e45425f0600774a9ff9fa30a9ab2a4, type: 3}
-  amountOfObjectsToSpawn: 1
+  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
+  - {fileID: 8058610955492501787, guid: ecb1417a021bf584f8460bd7e33bad68, type: 3}
+  - {fileID: 55728609361636037, guid: 397d5e97c4745b04289cc56373d2d53e, type: 3}
+  - {fileID: 9193446232947101317, guid: fed2f208f0c209f449d9452f67097387, type: 3}
+  amountOfObjectsToSpawn: 3
   spawnObjectsIntoContainer: 1
   objectsSpawnerContainer: {fileID: 3981298610163132279}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: -50, y: -350}
 --- !u!1 &3981298609438879003
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +435,7 @@ GameObject:
   - component: {fileID: 3981298609512393031}
   - component: {fileID: 3981298609512393024}
   m_Layer: 0
-  m_Name: AsteroidSpawnerWestern
+  m_Name: AsteroidHardSpawnerWestern
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -235,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3981298608655667463}
-  m_Father: {fileID: 3981298608153496353}
+  m_Father: {fileID: 65903927012153056}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3981298609512393024
@@ -250,18 +468,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
   infiniteTimerLoop: 1
   isOneShot: 0
   randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
   randomObjectSpawnOffsetMinMaxX: {x: 0, y: 0}
-  randomObjectSpawnOffsetMinMaxY: {x: -5, y: 5}
+  randomObjectSpawnOffsetMinMaxY: {x: -2, y: 2}
   objectsToSpawn:
   - {fileID: 6274763129388146716, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
-  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
   - {fileID: 8678831975124373795, guid: b0e45425f0600774a9ff9fa30a9ab2a4, type: 3}
-  amountOfObjectsToSpawn: 1
+  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
+  - {fileID: 8058610955492501787, guid: ecb1417a021bf584f8460bd7e33bad68, type: 3}
+  - {fileID: 55728609361636037, guid: 397d5e97c4745b04289cc56373d2d53e, type: 3}
+  - {fileID: 9193446232947101317, guid: fed2f208f0c209f449d9452f67097387, type: 3}
+  amountOfObjectsToSpawn: 3
   spawnObjectsIntoContainer: 1
   objectsSpawnerContainer: {fileID: 3981298608655667463}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 150, y: 350}
+  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
 --- !u!1 &3981298609689813201
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +528,7 @@ GameObject:
   - component: {fileID: 3981298610117500541}
   - component: {fileID: 3981298610117500542}
   m_Layer: 0
-  m_Name: AsteroidSpawnerEast
+  m_Name: AsteroidHardSpawnerEast
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -321,7 +546,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3981298609689813202}
-  m_Father: {fileID: 3981298608153496353}
+  m_Father: {fileID: 65903927012153056}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3981298610117500542
@@ -336,18 +561,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
   infiniteTimerLoop: 1
   isOneShot: 0
   randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
   randomObjectSpawnOffsetMinMaxX: {x: 0, y: 0}
-  randomObjectSpawnOffsetMinMaxY: {x: -5, y: 5}
+  randomObjectSpawnOffsetMinMaxY: {x: -2, y: 2}
   objectsToSpawn:
   - {fileID: 6274763129388146716, guid: 99c0db4e7b2fabe488a34dbc3a78c7fe, type: 3}
-  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
   - {fileID: 8678831975124373795, guid: b0e45425f0600774a9ff9fa30a9ab2a4, type: 3}
-  amountOfObjectsToSpawn: 1
+  - {fileID: 5581772228386024620, guid: 8787b003fcf9efc4485ed4d2f6dc0538, type: 3}
+  - {fileID: 8058610955492501787, guid: ecb1417a021bf584f8460bd7e33bad68, type: 3}
+  - {fileID: 55728609361636037, guid: 397d5e97c4745b04289cc56373d2d53e, type: 3}
+  - {fileID: 9193446232947101317, guid: fed2f208f0c209f449d9452f67097387, type: 3}
+  amountOfObjectsToSpawn: 3
   spawnObjectsIntoContainer: 1
   objectsSpawnerContainer: {fileID: 3981298609689813202}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: -100, y: -350}
+  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
 --- !u!1 &3981298610163132278
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,3 +610,239 @@ Transform:
   m_Father: {fileID: 3981298609024372815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4541447686106468659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5424445592198400577}
+  - component: {fileID: 4527595615910326809}
+  m_Layer: 0
+  m_Name: AsteroidIceSpawnerWestern
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5424445592198400577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541447686106468659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9211749207086101312}
+  m_Father: {fileID: 5532403939384135899}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4527595615910326809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541447686106468659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
+  infiniteTimerLoop: 1
+  isOneShot: 0
+  randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
+  randomObjectSpawnOffsetMinMaxX: {x: 0, y: 0}
+  randomObjectSpawnOffsetMinMaxY: {x: -2, y: 2}
+  objectsToSpawn:
+  - {fileID: 4710906307028860269, guid: bb02ff0dd9c2e014ab593bd60a536194, type: 3}
+  amountOfObjectsToSpawn: 1
+  spawnObjectsIntoContainer: 1
+  objectsSpawnerContainer: {fileID: 9211749207086101312}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
+--- !u!1 &4590371352214720959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1643001874960046013}
+  m_Layer: 0
+  m_Name: Asteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1643001874960046013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590371352214720959}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4481959344438072134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5573162563135215680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65903927012153056}
+  m_Layer: 0
+  m_Name: IndestructableAsteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &65903927012153056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573162563135215680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3981298609024372815}
+  - {fileID: 3981298608823203600}
+  - {fileID: 3981298610117500541}
+  - {fileID: 3981298609512393031}
+  m_Father: {fileID: 3981298608153496353}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7642991817097209367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2422246927939235352}
+  - component: {fileID: 3606342166456008223}
+  m_Layer: 0
+  m_Name: AsteroidIceSpawnerNorth
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2422246927939235352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642991817097209367}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6840595090929409721}
+  m_Father: {fileID: 5532403939384135899}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3606342166456008223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642991817097209367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cfceeec492e404399ca8ebfcbbc87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAsteroidSpawner: 1
+  infiniteTimerLoop: 1
+  isOneShot: 0
+  randomTimeBetweenSpawnMinMax: {x: 2, y: 5}
+  randomObjectSpawnOffsetMinMaxX: {x: -6, y: 6}
+  randomObjectSpawnOffsetMinMaxY: {x: 0, y: 0}
+  objectsToSpawn:
+  - {fileID: 4710906307028860269, guid: bb02ff0dd9c2e014ab593bd60a536194, type: 3}
+  amountOfObjectsToSpawn: 1
+  spawnObjectsIntoContainer: 1
+  objectsSpawnerContainer: {fileID: 6840595090929409721}
+  isRandomAddForceOnEntrance: 1
+  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
+--- !u!1 &8169085276850774645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5532403939384135899}
+  - component: {fileID: 7247122829824225775}
+  m_Layer: 0
+  m_Name: IceCubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5532403939384135899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169085276850774645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4481959344438072134}
+  - {fileID: 2422246927939235352}
+  - {fileID: 6949367631628421126}
+  - {fileID: 5424445592198400577}
+  m_Father: {fileID: 3981298608153496353}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7247122829824225775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169085276850774645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6b1691625eaba4dbbcc8bead768e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1Base: {fileID: 0}
+  player2Base: {fileID: 0}
+  player3Base: {fileID: 0}
+  player4Base: {fileID: 0}
+  iceCubeSpawners:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

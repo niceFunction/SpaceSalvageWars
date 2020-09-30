@@ -6,8 +6,13 @@ public class ScreenWrapAroundObject : MonoBehaviour
     public float screenWidthUnits = 9;
     public float screenHeightUnits = 6;
 
+    public float maxScreenWidthUnits = 12;
+    public float maxScreenHeightUnits = 10;
+
     private Collider2D _collider;
     private Vector3 _colliderExtents;
+
+    private Transform _transform;
 
     private void Awake()
     {
@@ -16,31 +21,60 @@ public class ScreenWrapAroundObject : MonoBehaviour
 
         screenHeightUnits += _colliderExtents.y;
         screenWidthUnits += _colliderExtents.x;
+
+        maxScreenHeightUnits += _colliderExtents.y;
+        maxScreenWidthUnits += _colliderExtents.x;
+
+        _transform = transform;
     }
 
     void Update()
     {
 
 
-        if (transform.position.x > screenWidthUnits)
+        if (_transform.position.x > screenWidthUnits)
         {
 
-            transform.position = new Vector3(-screenWidthUnits, transform.position.y, 0);
+            _transform.position = new Vector3(-screenWidthUnits, _transform.position.y, 0);
 
         }
-        if (transform.position.x < -screenWidthUnits)
+        if (_transform.position.x < -screenWidthUnits)
         {
-            transform.position = new Vector3(screenWidthUnits, transform.position.y, 0);
+            _transform.position = new Vector3(screenWidthUnits, _transform.position.y, 0);
         }
 
-        if (transform.position.y > screenHeightUnits)
+        if (_transform.position.y > screenHeightUnits)
         {
-            transform.position = new Vector3(transform.position.x, -screenHeightUnits, 0);
+            _transform.position = new Vector3(_transform.position.x, -screenHeightUnits, 0);
         }
 
-        if (transform.position.y < -screenHeightUnits)
+        if (_transform.position.y < -screenHeightUnits)
         {
-            transform.position = new Vector3(transform.position.x, screenHeightUnits, 0);
+            _transform.position = new Vector3(_transform.position.x, screenHeightUnits, 0);
         }
+
+        // DESTROY GAME OBJECT IF TOO FAR AWAY
+
+        if (_transform.position.x > maxScreenWidthUnits)
+        {
+
+            Destroy(gameObject);
+
+        }
+        if (_transform.position.x < -maxScreenWidthUnits)
+        {
+            Destroy(gameObject);
+        }
+
+        if (_transform.position.y > maxScreenHeightUnits)
+        {
+            Destroy(gameObject);
+        }
+
+        if (_transform.position.y < -maxScreenHeightUnits)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

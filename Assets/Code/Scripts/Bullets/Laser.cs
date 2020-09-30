@@ -19,17 +19,17 @@ public class Laser : StandardBullet
         }
 
         GameObject hitSpawnObjectInstance = Instantiate(hitSpawnObject, thisTransform.position, thisTransform.rotation);
-        if (isHitSpawnObjectRotateFromHitNormal) // This doesn't completely work... OnCollisionWorks however
-        {
-            RaycastHit hit;
-            Debug.DrawRay(normalRayCastOffset.position, thisTransform.right * 2);
-            if (Physics.Raycast(normalRayCastOffset.position, thisTransform.right * 2, out hit))
-            {
-                hitSpawnObjectInstance.transform.rotation = Quaternion.FromToRotation(Vector3.right, hit.normal);
-                Debug.Log(hit.normal);
-            }
-        }
-        else if (isHitSpawnObjectRotateRandom)
+        //if (isHitSpawnObjectRotateFromHitNormal) // This doesn't completely work... OnCollisionWorks however
+        //{
+        //    RaycastHit hit;
+        //    Debug.DrawRay(normalRayCastOffset.position, thisTransform.right * 2);
+        //    if (Physics.Raycast(normalRayCastOffset.position, thisTransform.right * 2, out hit))
+        //    {
+        //        hitSpawnObjectInstance.transform.rotation = Quaternion.FromToRotation(Vector3.right, hit.normal);
+        //        Debug.Log(hit.normal);
+        //    }
+        //}
+        if (isHitSpawnObjectRotateRandom)
         {
             hitSpawnObjectInstance.transform.Rotate(new Vector3(0, 0, Random.Range(0, 360)));
         }

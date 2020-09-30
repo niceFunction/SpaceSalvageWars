@@ -8,7 +8,7 @@ public class StandardBullet : MonoBehaviour
     public int playerId;
     public int currentPlayerId;
 
-    public Transform normalRayCastOffset;
+    // public Transform normalRayCastOffset;
 
     public float bulletSpeed = 100f;
     public float bulletLifeTime = 1f;
@@ -19,16 +19,16 @@ public class StandardBullet : MonoBehaviour
     public bool isHitSpawnObjectRotateFromHitNormal;
     public bool isHitSpawnObjectRotateRandom;
 
-    private Rigidbody2D _body;
+    public Rigidbody2D body;
     public Transform thisTransform;
 
 
     public virtual void Awake()
     {
-        _body = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
         thisTransform = transform;
 
-        _body.AddForce(thisTransform.right * bulletSpeed);
+        body.AddForce(thisTransform.right * bulletSpeed);
         StartCoroutine("BulletLifeTimeCounter");
     }
 

@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class RandomObjectSpawner : MonoBehaviour
 {
+    public bool isAsteroidSpawner = true;
+
     public bool infiniteTimerLoop = true;
     public bool isOneShot = false;
+
 
     public Vector2 randomTimeBetweenSpawnMinMax = new Vector2(1, 5);
     public Vector2 randomObjectSpawnOffsetMinMaxX = new Vector2(-1, 1);
@@ -17,6 +20,10 @@ public class RandomObjectSpawner : MonoBehaviour
 
     private int _currentObjectsSpawned;
     private Transform _transform;
+
+    public bool isRandomAddForceOnEntrance = true;
+    public Vector2 randomAddForceEntranceMinMaxX;
+    public Vector2 randomAddForceEntranceMinMaxY;
 
 
     private void Awake()
@@ -105,6 +112,12 @@ public class RandomObjectSpawner : MonoBehaviour
         float newRandomOffsetY = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxY.x, randomObjectSpawnOffsetMinMaxY.y);
         spawnObjectInstance.transform.position = objectsSpawnerContainer.position + new Vector3(newRandomOffsetX, newRandomOffsetY, 0);
 
+        if (isAsteroidSpawner && isRandomAddForceOnEntrance)
+        {
+            spawnObjectInstance.GetComponent<ActorAsteroid>().body.AddForce(new Vector2(Random.Range(randomAddForceEntranceMinMaxX.x, randomAddForceEntranceMinMaxX.y),
+                                                                                        Random.Range(randomAddForceEntranceMinMaxY.x, randomAddForceEntranceMinMaxY.y)));
+        }
+        
         _currentObjectsSpawned = objectsSpawnerContainer.childCount;
 
         if (isOneShot)

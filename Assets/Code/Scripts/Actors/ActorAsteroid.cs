@@ -12,9 +12,11 @@ public class ActorAsteroid : Actor
     public GameObject deathSpawnFX;
     public GameObject collectibleObjectDrop;
 
+    public Rigidbody2D body;
     private Transform _transform;
-    private void Awake()
+    public virtual void Awake()
     {
+        body = GetComponent<Rigidbody2D>();
         _transform = transform;
     }
 
@@ -31,7 +33,7 @@ public class ActorAsteroid : Actor
 
         for (int i = 0; i < asteroidsToSpawnOnDeath.Length; i++)
         {
-            Instantiate(asteroidsToSpawnOnDeath[i], _transform.position + asteroidsToSpawnOffsets[i], _transform.rotation);
+            Instantiate(asteroidsToSpawnOnDeath[i], _transform.position + asteroidsToSpawnOffsets[i], _transform.rotation, _transform.parent);
         }
 
         if(collectibleObjectDrop != null)
@@ -39,5 +41,25 @@ public class ActorAsteroid : Actor
             Instantiate(collectibleObjectDrop, transform.position, transform.rotation);
         }
         Destroy(gameObject);
+    }
+
+    public void ConnectThisBody(bool isConnected, Rigidbody2D body, float maxDistanceOfObjectJoint = 2f)
+    {
+        
+        if (isConnected)
+        {
+            SpringJoint2D joint = new SpringJoint2D();
+            joint.enabled = true;
+            joint.connectedBody = body;
+            joint.distance = maxDistanceOfObjectJoint;
+        }
+        else
+        {
+            if(GetComponent<SpringJoint2D>() != null)
+            {
+                Destroy(GetComponent<SpringJoint2D>());
+            }
+        }
+
     }
 }

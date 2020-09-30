@@ -41,8 +41,10 @@ public class DoDamageOnTrigger : MonoBehaviour
         {
             return;
         }
-
-        var _actor = collision.gameObject.GetComponent<ActorAsteroid>();
-        _actor.currentHealth = _actor.ChangeHealth(-damageToDo);
+        if (collision.gameObject.GetComponent<ActorAsteroid>().isDestructible)
+        {
+            var _actor = collision.gameObject.GetComponent<ActorAsteroid>();
+            _actor.currentHealth = _actor.ChangeHealth(-damageToDo);
+        }
     }
 }
