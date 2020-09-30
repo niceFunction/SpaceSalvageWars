@@ -321,8 +321,8 @@ GameObject:
   - component: {fileID: 379359326}
   - component: {fileID: 379359327}
   - component: {fileID: 379359329}
-  - component: {fileID: 379359328}
   - component: {fileID: 379359330}
+  - component: {fileID: 379359328}
   m_Layer: 0
   m_Name: CollectibleObject
   m_TagString: Untagged
@@ -338,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379359325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.25, y: 0.1, z: 0}
+  m_LocalPosition: {x: -6.99, y: 3.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -395,8 +395,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!232 &379359328
-DistanceJoint2D:
+--- !u!231 &379359328
+SpringJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -405,15 +405,16 @@ DistanceJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
+  m_ConnectedRigidBody: {fileID: 2456097647147182969}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 3.251538
-  m_MaxDistanceOnly: 0
+  m_Distance: 3.4087238
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!50 &379359329
 Rigidbody2D:
   serializedVersion: 4
@@ -1227,6 +1228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb85c2d774c7d24e98fb4b71400b029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBases: []
+  p1Score: {fileID: 0}
+  p2Score: {fileID: 0}
+  p3Score: {fileID: 0}
+  p4Score: {fileID: 0}
 --- !u!1 &1767701252
 GameObject:
   m_ObjectHideFlags: 0
