@@ -11,9 +11,6 @@ public class MovementKrister : MonoBehaviour // Carcontroller extends or inherit
     public float speedToTurnTolerance = 0.1f; // at what speed are we allowed to turn
     public float maxTurnPower = 3f;
 
-    [Tooltip("Multiplier applies to current drag"),Range(0f,10f)] // Whatever variable comes after tooltip will be affected
-    public float brakePower = 2f;
-
     [NonSerialized] public Vector2 movementInput; // x, y - Vector3 x, y, z
     
     [NonSerialized] public float forwardSpeed; // Current Speed
@@ -24,16 +21,11 @@ public class MovementKrister : MonoBehaviour // Carcontroller extends or inherit
 
     private Rigidbody2D _body;
     private Transform _transform;
-    private float _initialDrag = 0f;
-
-    public bool IsBreaking { get; set; } = false; // Automatic property
-
 
     private void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
         _transform = GetComponent<Transform>();
-        _initialDrag = _body.drag;
 
        //using property
        // float speed = ForwardSpeed;
@@ -42,20 +34,7 @@ public class MovementKrister : MonoBehaviour // Carcontroller extends or inherit
 
     private void Update() // Rule of Thumb use velocity speed related elements in FixedUpdate
     {
-        //if (movementInput.sqrMagnitude > 1f)
-        //{
-        //    movementInput.Normalize();
-        //}
-
-        if (IsBreaking)
-        {
-            _body.drag = Mathf.Lerp(_body.drag, _body.drag * brakePower, Time.fixedDeltaTime);
-        }
-        else
-        {
-            _body.drag = _initialDrag;
-            MoveForward();
-        }
+        MoveForward();
         Turn();
     }
 

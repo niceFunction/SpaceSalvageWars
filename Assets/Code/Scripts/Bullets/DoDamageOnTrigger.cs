@@ -8,6 +8,8 @@ public class DoDamageOnTrigger : MonoBehaviour
     public bool doAsteroidDamage = true;
     public int damageToDo;
 
+    public int playerId;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (doPlayerDamage)
@@ -26,9 +28,11 @@ public class DoDamageOnTrigger : MonoBehaviour
         {
             return;
         }
-
         var _actor = collision.gameObject.GetComponent<ActorPlayer>();
-        _actor.currentHealth = _actor.ChangeHealth(damageToDo);
+        if(_actor.playerId != playerId)
+        {
+            _actor.currentHealth = _actor.ChangeHealth(-damageToDo);
+        }
     }
 
     private void DoDamageToAsteroid(Collider2D collision)
@@ -39,6 +43,6 @@ public class DoDamageOnTrigger : MonoBehaviour
         }
 
         var _actor = collision.gameObject.GetComponent<ActorAsteroid>();
-        _actor.currentHealth = _actor.ChangeHealth(damageToDo);
+        _actor.currentHealth = _actor.ChangeHealth(-damageToDo);
     }
 }

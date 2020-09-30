@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     public Vector2 randomObjectSpawnOffsetMinMaxX = new Vector2(-1, 1);
     public Vector2 randomObjectSpawnOffsetMinMaxY = new Vector2(-1, 1);
 
-    public GameObject objectToSpawn;
+    public GameObject[] objectsToSpawn;
     public int amountOfObjectsToSpawn;
     public bool spawnObjectsIntoContainer = true;
     public Transform objectsSpawnerContainer;
@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        if(objectToSpawn == null)
+        if(objectsToSpawn == null)
         {
             return;
         }
@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
     }
     void OnEnable()
     {
-        if (objectToSpawn == null)
+        if (objectsToSpawn == null)
         {
             return;
         }
@@ -97,6 +97,9 @@ public class Spawner : MonoBehaviour
 
     private void SpawnObjectIntoContainer()
     {
+        //Pick Random Object To Spawn from objectsToSpawn Array
+        GameObject objectToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Length)];
+
         var spawnObjectInstance = Instantiate(objectToSpawn, objectsSpawnerContainer.position,objectsSpawnerContainer.rotation,objectsSpawnerContainer);
         float newRandomOffsetX = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxX.x, randomObjectSpawnOffsetMinMaxX.y);
         float newRandomOffsetY = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxY.x, randomObjectSpawnOffsetMinMaxY.y);
@@ -116,6 +119,9 @@ public class Spawner : MonoBehaviour
 
     private void SpawnObject()
     {
+        //Pick Random Object To Spawn from objectsToSpawn Array
+        GameObject objectToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Length)];
+
         var spawnObjectInstance = Instantiate(objectToSpawn, _transform.position, _transform.rotation);
         float newRandomOffsetX = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxX.x, randomObjectSpawnOffsetMinMaxX.y);
         float newRandomOffsetY = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxY.x, randomObjectSpawnOffsetMinMaxY.y);

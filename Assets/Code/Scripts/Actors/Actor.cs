@@ -7,7 +7,7 @@ public class Actor : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    public int ChangeHealth(int healthToChange)
+    public virtual int ChangeHealth(int healthToChange)
     {
         currentHealth += healthToChange;
 

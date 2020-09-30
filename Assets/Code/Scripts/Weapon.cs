@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     public string weaponSocketName = "WeaponSocket";
 
     public bool isBulletAimAt = false;
+    public bool isBulletAimForward = true;
     public bool isBulletEnemyAim = false;
     public GameObject bulletToSpawn;
     public float bulletVelocity;
@@ -37,6 +38,8 @@ public class Weapon : MonoBehaviour
     private Transform _transform;
     private Coroutine _shootingCoroutine;
 
+    private ActorPlayer _actor;
+
     public bool IsShooting { get; private set; } = false;
 
     public bool IsAimable
@@ -50,6 +53,8 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
+        _actor = GetComponent<ActorPlayer>();
+
         _transform = transform;
         weaponSocket = _transform.Find(weaponSocketName);
         weaponParticleSystem = GetComponentInChildren<ParticleSystem>();
@@ -94,10 +99,19 @@ public class Weapon : MonoBehaviour
 
     public virtual void AimBullet(GameObject bullet)
     {
-        Vector2 direction = aimAtPosition - (Vector2)weaponSocket.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        bullet.transform.rotation = Quaternion.Slerp(weaponSocket.rotation, rotation, aimRotationSpeed * Time.deltaTime);
+        Vector2 direction;
+        if (isBulletAimForward)
+        {
+            direction = Vector2.right;
+        }
+        else
+        {
+            direction = aimAtPosition - (Vector2)weaponSocket.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            bullet.transform.rotation = Quaternion.Slerp(weaponSocket.rotation, rotation, aimRotationSpeed * Time.deltaTime);
+        }
+        
     }
 
     public void StartShooting()
@@ -137,12 +151,18 @@ public class Weapon : MonoBehaviour
     {
         var _bulletSpawned = Instantiate(bulletToSpawn, spawnPoint.position, weaponSocket.rotation);
         var _bulletRB = _bulletSpawned.GetComponent<Rigidbody2D>();
+        var _bulletLaser = _bulletSpawned.GetComponent<Laser>();
+        _bulletLaser.currentPlayerId = _actor.playerId;
+
         if (isBulletAimAt)
         {
             AimBullet(_bulletSpawned);
         }
         PlayShootSFX();
-        weaponParticleSystem.Play();
+        if(weaponParticleSystem != null)
+        {
+            weaponParticleSystem.Play();
+        }
         if (isHaveBullets)
         {
             currentAmountOfBullets -= 1;

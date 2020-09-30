@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2911995960233302903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751041624555844676}
+  m_Layer: 10
+  m_Name: RayCastNormalDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751041624555844676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911995960233302903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6740024219691987326}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6740024219691987323
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,8 +42,10 @@ GameObject:
   - component: {fileID: 6740024219691987325}
   - component: {fileID: 6740024219691987324}
   - component: {fileID: 6740024219691987327}
+  - component: {fileID: 1653383939935275009}
+  - component: {fileID: 955825264646638655}
   m_Layer: 10
-  m_Name: Bullet
+  m_Name: LaserPlayer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,9 +59,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740024219691987323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.22, y: 1.44, z: -14.450983}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 751041624555844676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66,11 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43917493969504e428075c996516321e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerId: 1
+  currentPlayerId: 0
+  normalRayCastOffset: {fileID: 751041624555844676}
   bulletSpeed: 800
   bulletLifeTime: 6
   hitSpawnObject: {fileID: 6540784040059766682, guid: 3a94324e3c60c01418fe2f2df1db6018, type: 3}
-  isHitSpawnObjectRotateFromHitNormal: 1
-  isHitSpawnObjectRotateRandom: 0
+  isHitSpawnObjectRotateFromHitNormal: 0
+  isHitSpawnObjectRotateRandom: 1
 --- !u!212 &6740024219691987327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,3 +158,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1653383939935275009
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740024219691987323}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00025223196, y: 0.0002580583}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3125, y: 0.1875}
+    newSize: {x: 0.3125, y: 0.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.18803695, y: 0.0630486}
+  m_EdgeRadius: 0
+--- !u!114 &955825264646638655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740024219691987323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de515465498d924b9bdb6a6abc652ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doPlayerDamage: 1
+  doAsteroidDamage: 1
+  damageToDo: 1
+  playerId: 1
