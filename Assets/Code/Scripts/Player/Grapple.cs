@@ -11,8 +11,8 @@ namespace GT
 
         public Rigidbody2D playerBody;
         public Rigidbody2D hookBody;
-        public ActorAsteroid actorAsteroid;
-        public PlayerInput playerInput;
+        public ActorAsteroid actorAsteroid; // Added recently
+        public PlayerInput playerInput; // Added recently
 
         //[Tooltip("Get the grapplehook point position")]
         //public GameObject grappleHookPoint;
@@ -37,6 +37,9 @@ namespace GT
             //if (collisionInfo.gameObject.tag == "Asteroid")
             if(collisionInfo.gameObject.GetComponent<ActorAsteroid>() != null)
             {
+
+                //Start: This makes the grapple attach itself (as a child) to asteroid
+                //TODO reminder: Decrease Asteroid mass when hook is attached?
                 var asteroid = collisionInfo.gameObject.GetComponent<ActorAsteroid>();
 
                 var joint = playerInput.GetComponent<SpringJoint2D>();
@@ -44,10 +47,9 @@ namespace GT
                 joint.enabled = true;
 
                 playerInput.asteroidActor = asteroid;
-
                 asteroid.body.freezeRotation = true;
-                //asteroid.body.velocity = pla
-                
+                //End
+
                 Debug.Log("Collided with asteroid");
                 var asteroidTransform = collisionInfo.transform;
                 transform.SetParent(asteroidTransform, true);
