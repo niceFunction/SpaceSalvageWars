@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!50 &13134736 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4710906307028860271, guid: bb02ff0dd9c2e014ab593bd60a536194, type: 3}
-  m_PrefabInstance: {fileID: 4710906307456038476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &52339665
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +202,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52339665}
   m_CullTransparentMesh: 0
+--- !u!1 &54884015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54884016}
+  m_Layer: 8
+  m_Name: GrapplePointTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &54884016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54884015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2456097647147182968}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &93660866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1613,7 @@ Transform:
   - {fileID: 1261212229}
   - {fileID: 2456097647982939873}
   - {fileID: 1522250067}
+  - {fileID: 54884016}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1603,7 +1629,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 50
   m_GravityScale: 0
@@ -1627,6 +1653,7 @@ GameObject:
   - component: {fileID: 2456097647147182979}
   - component: {fileID: 2456097647147182977}
   - component: {fileID: 2456097647147182976}
+  - component: {fileID: 2456097647147182981}
   - component: {fileID: 2456097647147182980}
   m_Layer: 8
   m_Name: PlayerTest
@@ -1738,10 +1765,10 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2456097647147182975}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 13134736}
+  m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
@@ -1751,6 +1778,23 @@ SpringJoint2D:
   m_Distance: 1.8817545
   m_DampingRatio: 0
   m_Frequency: 1
+--- !u!114 &2456097647147182981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456097647147182975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb6a5bdba78b4c49ac755f8116b9105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grappleHookPrefab: {fileID: 563549708213067738, guid: 3309a4b9e548cab47ab8ddfbbfe159df, type: 3}
+  grapplePointTransform: {fileID: 54884016}
+  hookForce: 20
+  hookSpring: {fileID: 2456097647147182980}
+  asteroidActor: {fileID: 0}
 --- !u!212 &2456097647982939872
 SpriteRenderer:
   m_ObjectHideFlags: 0
