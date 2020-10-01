@@ -49,6 +49,10 @@ MonoBehaviour:
   grabable:
     serializedVersion: 2
     m_Bits: 4096
+  playerBody: {fileID: 0}
+  hookBody: {fileID: 8144103597467758150}
+  actorAsteroid: {fileID: 0}
+  playerInput: {fileID: 0}
 --- !u!50 &8144103597467758150
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: -1453528459
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6397624c05c97f74a9051c7e29b5255e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13def4112008dde478961adaf2248f44, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

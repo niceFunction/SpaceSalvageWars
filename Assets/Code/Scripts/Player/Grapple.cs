@@ -9,7 +9,10 @@ namespace GT
 
         public LayerMask grabable;
 
+        public Rigidbody2D playerBody;
         public Rigidbody2D hookBody;
+        public ActorAsteroid actorAsteroid;
+        public PlayerInput playerInput;
 
         //[Tooltip("Get the grapplehook point position")]
         //public GameObject grappleHookPoint;
@@ -18,7 +21,7 @@ namespace GT
         // Start is called before the first frame update
         void Start()
         {
-
+            
         }
 
         // Update is called once per frame
@@ -31,8 +34,20 @@ namespace GT
         {
 
             //if ((collisionInfo.gameObject.layer & grabable) == grabable)
-            if (collisionInfo.gameObject.tag == "Asteroid")
+            //if (collisionInfo.gameObject.tag == "Asteroid")
+            if(collisionInfo.gameObject.GetComponent<ActorAsteroid>() != null)
             {
+                var asteroid = collisionInfo.gameObject.GetComponent<ActorAsteroid>();
+
+                var joint = playerInput.GetComponent<SpringJoint2D>();
+                joint.connectedBody = asteroid.body;
+                joint.enabled = true;
+
+                playerInput.asteroidActor = asteroid;
+
+                asteroid.body.freezeRotation = true;
+                //asteroid.body.velocity = pla
+                
                 Debug.Log("Collided with asteroid");
                 var asteroidTransform = collisionInfo.transform;
                 transform.SetParent(asteroidTransform, true);
