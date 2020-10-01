@@ -43,6 +43,7 @@ public class ActorAsteroid : Actor
         Destroy(gameObject);
     }
 
+
     public void ConnectThisBody(bool isConnected, Rigidbody2D body, float maxDistanceOfObjectJoint = 2f)
     {
         
