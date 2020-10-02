@@ -32,9 +32,17 @@ namespace GT
         public SpringJoint2D hookSpring;
         public ActorAsteroid asteroidActor;
 
+
+        [Header("Rope"), Tooltip("Line renderer")]
+        public LineRenderer ropeRenderer;
+        [SerializeField]
+        private int _percision = 40;
+        [HideInInspector]
+        public bool isGrappling = true;
+
         private GameObject _hook;
         private Grapple _grapple;
-
+        [Space(15f)]
         public Rigidbody2D _playerBody;
         private Vector2 _move;
         private Vector3 _rotate;
@@ -56,12 +64,19 @@ namespace GT
         {
             controls.Gameplay.Enable();
             hookSpring.enabled = true;
+
+            ropeRenderer.positionCount = _percision;
+
+            ropeRenderer.enabled = true;
         }
 
         private void OnDisable()
         {
             controls.Gameplay.Disable();
             hookSpring.enabled = false;
+
+            ropeRenderer.enabled = false;
+            //isGrappling = false;
         }
 
         private void OnGUI()
@@ -69,6 +84,8 @@ namespace GT
             #if UNITY_EDITOR
             GUILayout.Label("Ship velocity: " + _playerBody.velocity);
             GUILayout.Label("Grapplehook: " + _hook);
+            //GUILayout.Label("GrappleHook position: " + _grapple.hookBody.position);
+            //GUILayout.Label("Player position: " + _playerBody.position);
             #endif
         }
 
@@ -77,11 +94,18 @@ namespace GT
         {
             hookSpring.enabled = false;
             _playerBody = GetComponent<Rigidbody2D>();
-
+            ropeRenderer.enabled = false;
         }
 
         private void Update()
         {
+            if (_hook != null)
+            {
+
+                ropeRenderer.SetPosition(1, _playerBody.position);
+                ropeRenderer.SetPosition(0, _grapple.hookBody.position);
+            }
+            //DrawRope();
             if (_grapple != null)
             {
                 if (_grapple.hookBody != null)
@@ -141,13 +165,30 @@ namespace GT
 
                 Rigidbody2D hookBody = _hook.GetComponent<Rigidbody2D>();
                 hookBody.AddForce(grapplePointTransform.right * hookForce, ForceMode2D.Impulse);
+                
+
+                ropeRenderer.enabled = true;
+
             }
             else if (_hook != null)
             {
+
+                ropeRenderer.enabled = false;
                 hookSpring.enabled = false;
                 Debug.Log("Destroying Hook");
                 Destroy(_hook);
             }
+        }
+
+        void DrawRope()
+        {
+            /*
+            ropeRenderer = GetComponent<LineRenderer>();
+            for (int i = 0; i < 40; i++)
+            {
+                ropeRenderer.SetPosition(i , _grapple.transform.position);
+            }
+            */
         }
     }
 }

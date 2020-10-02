@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1248684123609165627}
-  - component: {fileID: 7677171736678927445}
   - component: {fileID: 4007306944659302355}
   m_Layer: 0
   m_Name: Rope
@@ -32,23 +31,6 @@ Transform:
   m_Father: {fileID: 8831726493544825029}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7677171736678927445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136980724595013799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d759d95a64320646b4f46077f224faf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInput: {fileID: 2456097647932668744}
-  grappleHook: {fileID: 622367448619700145, guid: 02861ac9dad66ce418a011bb4196bd1a, type: 3}
-  grapplePoint: {fileID: 6474443582276463085}
-  lineRenderer: {fileID: 4007306944659302355}
-  _linePointAmount: 40
 --- !u!120 &4007306944659302355
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -222,6 +204,11 @@ MonoBehaviour:
   grapplePointTransform: {fileID: 5147069561505305349, guid: 1fe75e359bc539a4ba5fd0539282a208, type: 3}
   hookForce: 50
   hookSpring: {fileID: 1803705328184610705}
+  asteroidActor: {fileID: 0}
+  ropeRenderer: {fileID: 0}
+  _percision: 40
+  isGrappling: 1
+  _playerBody: {fileID: 0}
 --- !u!231 &1803705328184610705
 SpringJoint2D:
   m_ObjectHideFlags: 0

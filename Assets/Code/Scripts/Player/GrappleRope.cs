@@ -7,11 +7,19 @@ namespace GT
 {
     public class GrappleRope : MonoBehaviour
     {
+        //public PlayerInput playerInput;
+
+        //[Tooltip("Reference the 'GrappleHook' prefab")]
+        //public GameObject grappleHook;
+        [Tooltip("Can be the first point")]
         public PlayerInput playerInput;
 
-        [Tooltip("Reference the 'GrappleHook' prefab")]
-        public GameObject grappleHook;
-        public GameObject grapplePoint;
+        [Tooltip("The gameobject where the grapplehook spawns from")]
+        public GameObject grappleSpawnPoint;
+
+        [Tooltip("Second point point")]
+        public Grapple grappleHookPoint;
+        //public GameObject grapplePoint;
         public LineRenderer lineRenderer;
 
         [SerializeField]
@@ -25,7 +33,12 @@ namespace GT
         // Update is called once per frame
         void Update()
         {
+            DrawRope();
+        }
 
+        void DrawRope()
+        {
+            
         }
     }
 }
