@@ -12,10 +12,23 @@ public class GrappleVariant : MonoBehaviour
     public ActorAsteroid actorAsteroid; 
     public GrappleHookShooter grappleHookShooter;
 
+    private AudioSource _grappleSFX;
+    public AudioClip grappleShootSFX;
+    public AudioClip grappleHitSFX;
+
     private void Awake()
     {
         hookBody = GetComponent<Rigidbody2D>();
+        _grappleSFX = GetComponent<AudioSource>();
     }
+
+
+    private void Start()
+    {
+        _grappleSFX.PlayOneShot(grappleShootSFX);
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         if (collisionInfo.gameObject.GetComponent<ActorAsteroid>() != null)
@@ -34,6 +47,8 @@ public class GrappleVariant : MonoBehaviour
             asteroid.SetAsteroidLayer("Players"); // TO DO Collectable set to collectableLayer...
 
             hookBody.simulated = false; // This puts hook at place and allows asteroid to continue
+
+            _grappleSFX.PlayOneShot(grappleHitSFX);
 
         }
     }

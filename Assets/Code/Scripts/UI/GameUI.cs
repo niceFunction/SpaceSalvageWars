@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
-    public int scoreToWin = 3;
+    public int scoreToWin = 1;
 
     public PlayerBase player1Base;
     public PlayerBase player2Base;
@@ -18,6 +17,7 @@ public class GameUI : MonoBehaviour
     public Text player3Score;
     public Text player4Score;
 
+    public GameObject playerWin;
     public Text playerWinText;
 
     // Sign up playerbases with UI score
@@ -46,11 +46,31 @@ public class GameUI : MonoBehaviour
                 player4Score.text = score.ToString();
                 break;
         }
-        if(score >= scoreToWin)
+
+        if (score >= scoreToWin)
         {
-            playerWinText.enabled = true;
-            playerWinText.text = (playerId.ToString() + " IS WINNER");
+            Debug.Log("YOUWIN!! ");
+            Debug.Log(playerId.ToString() + " IS WINNER");
+            playerWin.SetActive(true);
+            playerWinText.text = ("Player "+ playerId.ToString() + " Wins!");
         }
+
+    }
+
+    public void ReturnToMainMenu()
+    {
+        // TO DO MAIN MENU
+    }
+
+    public void RestartLevel()
+    {
+        var _currentLevel = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(_currentLevel);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

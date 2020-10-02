@@ -24,6 +24,11 @@ public class GrappleHookShooter : MonoBehaviour
     public Vector2 lineAndPlayer;
     public LineRenderer lineRenderer;
 
+    //SFX
+    public AudioSource _grappleShooterSFX;
+    public AudioClip decoupleSFX;
+
+
     public void Start()
     {
         _playerBody = GetComponent<ActorPlayer>();
@@ -87,5 +92,7 @@ public class GrappleHookShooter : MonoBehaviour
         {
             Destroy(_hook);
         }
+
+        _grappleShooterSFX.PlayOneShot(decoupleSFX);
     }
 }

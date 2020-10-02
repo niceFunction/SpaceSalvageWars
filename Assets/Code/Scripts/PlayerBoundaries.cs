@@ -8,6 +8,8 @@ public class PlayerBoundaries : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<GrappleVariant>() != null)
         {
+            var _grapple = collision.gameObject.GetComponent<GrappleVariant>();
+            _grapple.grappleHookShooter.DecoupleGrappleHook();
             Destroy(collision.gameObject); // Destroy Grapple if collided
         }
     }

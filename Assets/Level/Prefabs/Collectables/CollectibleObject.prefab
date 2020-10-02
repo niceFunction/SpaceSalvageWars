@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3540697094349930837}
   - component: {fileID: 3540697094349930859}
   - component: {fileID: 3540697094349930856}
+  - component: {fileID: 6873511450560885535}
   m_Layer: 12
   m_Name: CollectibleObject
   m_TagString: Untagged
@@ -175,3 +176,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6873511450560885535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540697094349930839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70f8b81dcdefe645b16493cab1b34b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doPlayerDamage: 1
+  doAsteroidDamage: 0
+  damageToDo: 1
+  collisionFXSpawn: {fileID: 6540784040059766682, guid: 3a94324e3c60c01418fe2f2df1db6018, type: 3}
+  isCollisionFXSpawnRotateFromHitNormal: 1
