@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    public int scoreToWin = 3;
+
     public PlayerBase player1Base;
     public PlayerBase player2Base;
     public PlayerBase player3Base;
@@ -15,6 +17,8 @@ public class GameUI : MonoBehaviour
     public Text player2Score;
     public Text player3Score;
     public Text player4Score;
+
+    public Text playerWinText;
 
     // Sign up playerbases with UI score
     void Start()
@@ -41,6 +45,11 @@ public class GameUI : MonoBehaviour
             case 4:
                 player4Score.text = score.ToString();
                 break;
+        }
+        if(score >= scoreToWin)
+        {
+            playerWinText.enabled = true;
+            playerWinText.text = (playerId.ToString() + " IS WINNER");
         }
     }
 

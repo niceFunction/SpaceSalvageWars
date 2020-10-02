@@ -125,6 +125,7 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 1
   isDestructible: 1
+  isCollectable: 0
   asteroidsToSpawnOnDeath:
   - {fileID: 5757759046773212444, guid: 71234a90e518c954084541c0d6eeceeb, type: 3}
   - {fileID: 1571343991421971934, guid: fe820f278ae646d4aade41d86401a1d2, type: 3}
@@ -148,10 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cb0bbf8ca5e1549a196506f4b78414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenWidthUnits: 9
-  screenHeightUnits: 5
-  maxScreenWidthUnits: 10
-  maxScreenHeightUnits: 7
+  screenWidthUnits: 18
+  screenHeightUnits: 10
+  maxScreenWidthUnits: 20
+  maxScreenHeightUnits: 12
 --- !u!114 &8626450511226903699
 MonoBehaviour:
   m_ObjectHideFlags: 0

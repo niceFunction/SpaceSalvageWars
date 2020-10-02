@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3540697094349930836}
+  - component: {fileID: 3649922233286989444}
+  - component: {fileID: 3540697094349930857}
+  - component: {fileID: -5321779945776508331}
   - component: {fileID: 3540697094349930837}
   - component: {fileID: 3540697094349930859}
   - component: {fileID: 3540697094349930856}
-  - component: {fileID: 3540697094349930858}
-  - component: {fileID: 3540697094349930857}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: CollectibleObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3649922233286989444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540697094349930839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba58416e9d2cab4dbd86915ee2edc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHealth: 1
+  isDestructible: 0
+  isCollectable: 0
+  asteroidsToSpawnOnDeath: []
+  asteroidsToSpawnOffsets: []
+  deathSpawnFX: {fileID: 0}
+  collectibleObjectDrop: {fileID: 0}
+  body: {fileID: 0}
+--- !u!114 &3540697094349930857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540697094349930839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b33649170945a345879865bba9a3ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePoints: 1
+  maxDistanceOfObjectJoint: 2
+--- !u!114 &-5321779945776508331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540697094349930839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cb0bbf8ca5e1549a196506f4b78414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidthUnits: 18
+  screenHeightUnits: 10
+  maxScreenWidthUnits: 20
+  maxScreenHeightUnits: 12
 --- !u!212 &3540697094349930837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,38 +175,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!231 &3540697094349930858
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3540697094349930839}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.005
-  m_DampingRatio: 0
-  m_Frequency: 1
---- !u!114 &3540697094349930857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3540697094349930839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b33649170945a345879865bba9a3ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scorePoints: 1
-  joint: {fileID: 0}
-  maxDistanceOfObjectJoint: 2

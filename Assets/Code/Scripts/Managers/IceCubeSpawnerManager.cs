@@ -10,7 +10,7 @@ public class IceCubeSpawnerManager : MonoBehaviour
     public PlayerBase player4Base;
 
     public GameObject[] iceCubeSpawners;
-    // Start is called before the first frame update
+
     void Start()
     {
 
@@ -18,6 +18,8 @@ public class IceCubeSpawnerManager : MonoBehaviour
         player2Base.OnPlayerScoreHandler += RandomActivateSpawner;
         player3Base.OnPlayerScoreHandler += RandomActivateSpawner;
         player4Base.OnPlayerScoreHandler += RandomActivateSpawner;
+
+        RandomActivateSpawner(0, 0);
     }
 
     public void RandomActivateSpawner(int playerId, int score) // id knows where the playerbase is so perhaps spawn furthest away from player? Or Not... Testing!

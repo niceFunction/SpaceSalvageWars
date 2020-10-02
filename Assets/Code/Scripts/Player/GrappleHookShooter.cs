@@ -18,12 +18,32 @@ public class GrappleHookShooter : MonoBehaviour
 
     private ActorPlayer _playerBody;
 
+    // RENDER LINE BETWEEN PLAYER AND HOOK
+    public bool hookReleased;
+    public bool hookConnected;
+    public Vector2 lineAndPlayer;
+    public LineRenderer lineRenderer;
 
     public void Start()
     {
         _playerBody = GetComponent<ActorPlayer>();
+        lineRenderer = GetComponent<LineRenderer>();
 
         hookSpring.enabled = false;
+    }
+
+    private void Update()
+    {
+        if (hookReleased)
+        {
+            lineRenderer.SetPosition(0, _playerBody.body.position);
+            if (hookConnected)
+            {
+                lineRenderer.SetPosition(1, asteroidActor.body.position);
+                return;
+            }
+            lineRenderer.SetPosition(1, _grapple.hookBody.position);
+        }
     }
 
 
@@ -31,6 +51,8 @@ public class GrappleHookShooter : MonoBehaviour
     {
         if (_hook == null)
         {
+            hookReleased = true;
+            lineRenderer.enabled = true;
             Debug.Log("Firing Hook");
             _hook = Instantiate(grappleHookPrefab,
                                 grapplePointTransform.position,
@@ -45,8 +67,24 @@ public class GrappleHookShooter : MonoBehaviour
         }
         else if (_hook != null)
         {
-            hookSpring.enabled = false;
-            Debug.Log("Destroying Hook");
+            DecoupleGrappleHook();
+        }
+    }
+
+    public void DecoupleGrappleHook()
+    {
+        hookConnected = false;
+        hookReleased = false;
+        lineRenderer.enabled = false;
+        if (asteroidActor != null)
+        {
+            asteroidActor.SetAsteroidLayer("Asteroids");
+            asteroidActor = null;
+        }
+        hookSpring.enabled = false;
+        Debug.Log("Destroying Hook");
+        if(_hook != null)
+        {
             Destroy(_hook);
         }
     }

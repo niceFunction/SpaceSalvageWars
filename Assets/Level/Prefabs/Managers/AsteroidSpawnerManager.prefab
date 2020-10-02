@@ -86,7 +86,7 @@ MonoBehaviour:
   spawnObjectsIntoContainer: 1
   objectsSpawnerContainer: {fileID: 892632386263525653}
   isRandomAddForceOnEntrance: 1
-  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxX: {x: -100, y: -300}
   randomAddForceEntranceMinMaxY: {x: 0, y: 0}
 --- !u!1 &1705432243903282388
 GameObject:
@@ -175,7 +175,7 @@ MonoBehaviour:
   objectsSpawnerContainer: {fileID: 1643001874960046013}
   isRandomAddForceOnEntrance: 1
   randomAddForceEntranceMinMaxX: {x: 0, y: 0}
-  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: 100, y: 300}
 --- !u!1 &3430048536388180085
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
   spawnObjectsIntoContainer: 1
   objectsSpawnerContainer: {fileID: 9211749207086101312}
   isRandomAddForceOnEntrance: 1
-  randomAddForceEntranceMinMaxX: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxX: {x: 100, y: 300}
   randomAddForceEntranceMinMaxY: {x: 0, y: 0}
 --- !u!1 &4590371352214720959
 GameObject:
@@ -789,7 +789,7 @@ MonoBehaviour:
   objectsSpawnerContainer: {fileID: 6840595090929409721}
   isRandomAddForceOnEntrance: 1
   randomAddForceEntranceMinMaxX: {x: 0, y: 0}
-  randomAddForceEntranceMinMaxY: {x: 0, y: 0}
+  randomAddForceEntranceMinMaxY: {x: -100, y: -300}
 --- !u!1 &8169085276850774645
 GameObject:
   m_ObjectHideFlags: 0

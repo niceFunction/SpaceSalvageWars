@@ -8,6 +8,7 @@ public class ActorPlayer : Actor
     public int playerId;
 
     public Transform playerBase;
+    public float playerStartRotation;
     public GameObject respawnFX;
     public GameObject deathExplosion;
 
@@ -17,10 +18,12 @@ public class ActorPlayer : Actor
 
     public Rigidbody2D body;
     private Transform _transform;
+    private GrappleHookShooter _grappleHookShooter;
 
     private void Awake()
     {
         _transform = transform;
+        _grappleHookShooter = GetComponent<GrappleHookShooter>();
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -45,6 +48,7 @@ public class ActorPlayer : Actor
     {
         //Instantiate(deathExplosion, _transform.position, _transform.rotation); // TO DO DEATH EXPLOSION FX
         RespawnAtBase();
+        _grappleHookShooter.DecoupleGrappleHook();
     }
 
     private void RespawnAtBase()
@@ -52,5 +56,6 @@ public class ActorPlayer : Actor
         // Instantiate(respawnFX, playerBase.position, playerBase.rotation); // TO DO RESPAWN FX
         body.velocity = new Vector2(); // Reset Motion
         _transform.position = playerBase.position;
+        _transform.Rotate(Vector3.forward,playerStartRotation);
     }
 }

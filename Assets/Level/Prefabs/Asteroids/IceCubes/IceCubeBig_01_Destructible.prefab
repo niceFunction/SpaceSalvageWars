@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -125,15 +125,15 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 1
   isDestructible: 1
+  isCollectable: 0
   asteroidsToSpawnOnDeath:
   - {fileID: 1056274023875106688, guid: 303592b045fa2b54b9c4ad0fd34557d6, type: 3}
   - {fileID: 8626450511226903700, guid: 0688a40cac0047e4090da35a885db50e, type: 3}
-  - {fileID: 3540697094349930839, guid: ce565ea80b96d1d49a8b6c7d9ce16d86, type: 3}
   asteroidsToSpawnOffsets:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0.2, z: 0}
+  - {x: 0, y: -0.2, z: 0}
   deathSpawnFX: {fileID: 3954421877500975525, guid: 95a07bd022d80814f9b12b2467c9173b, type: 3}
-  collectibleObjectDrop: {fileID: 0}
+  collectibleObjectDrop: {fileID: 3540697094349930839, guid: ce565ea80b96d1d49a8b6c7d9ce16d86, type: 3}
   body: {fileID: 0}
 --- !u!114 &4710906307028860266
 MonoBehaviour:
@@ -147,10 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cb0bbf8ca5e1549a196506f4b78414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenWidthUnits: 9
-  screenHeightUnits: 5
-  maxScreenWidthUnits: 10
-  maxScreenHeightUnits: 7
+  screenWidthUnits: 18
+  screenHeightUnits: 10
+  maxScreenWidthUnits: 20
+  maxScreenHeightUnits: 12
 --- !u!114 &4710906307028860270
 MonoBehaviour:
   m_ObjectHideFlags: 0

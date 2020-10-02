@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 101336064674169796}
   - component: {fileID: 9112081181316562477}
   - component: {fileID: 999128107754170667}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrappleHookVariant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,9 +87,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0142174885, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.12134387
 --- !u!1 &4850039582805376062
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 13def4112008dde478961adaf2248f44, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.4009434, g: 1, b: 0.483358, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

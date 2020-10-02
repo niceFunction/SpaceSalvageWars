@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0000c975106ed4458be8516fcdac01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerId: 3
+  playerId: 4
   playerScore: 0
 --- !u!82 &4751262402728341886
 AudioSource:
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0000c975106ed4458be8516fcdac01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerId: 4
+  playerId: 3
   playerScore: 0
 --- !u!82 &5187219324981914838
 AudioSource:

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActorAsteroid : Actor
 {
     public bool isDestructible = true;
+    public bool isCollectable;
 
     public GameObject[] asteroidsToSpawnOnDeath;
     public Vector3[] asteroidsToSpawnOffsets; // Offset per asteroid set to same as above
@@ -14,6 +15,7 @@ public class ActorAsteroid : Actor
 
     public Rigidbody2D body;
     private Transform _transform;
+
     public virtual void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -43,24 +45,9 @@ public class ActorAsteroid : Actor
         Destroy(gameObject);
     }
 
-
-    public void ConnectThisBody(bool isConnected, Rigidbody2D body, float maxDistanceOfObjectJoint = 2f)
+    public void SetAsteroidLayer(string layerName)
     {
-        
-        if (isConnected)
-        {
-            SpringJoint2D joint = new SpringJoint2D();
-            joint.enabled = true;
-            joint.connectedBody = body;
-            joint.distance = maxDistanceOfObjectJoint;
-        }
-        else
-        {
-            if(GetComponent<SpringJoint2D>() != null)
-            {
-                Destroy(GetComponent<SpringJoint2D>());
-            }
-        }
-
+        gameObject.layer = LayerMask.NameToLayer(layerName);
     }
+
 }

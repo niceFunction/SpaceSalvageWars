@@ -22,27 +22,83 @@ public class PlayerInputKrister : MonoBehaviour
 
     private void Awake()
     {
+        _actorPlayer = GetComponent<ActorPlayer>();
         _shipMovement = GetComponent<MovementKrister>();
         _weapon = GetComponent<Weapon>();
         _grappleHookShooter = GetComponent<GrappleHookShooter>();
 
-        _input = new PlayerControls();
-
-        _input.Gameplay.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        _input.Gameplay.Move.canceled += ctx => moveInput = Vector2.zero;
-
-        _input.Gameplay.FireHook.performed += ctx => PlayerFireHook();
-
+        SetPlayerControls();
     }
+
+
+    public void SetPlayerControls()
+    {
+        switch (_actorPlayer.playerId)
+        {
+            case 1:
+                _input = new PlayerControls();
+                _input.Player1.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+                _input.Player1.Move.canceled += ctx => moveInput = Vector2.zero;
+                _input.Player1.FireHook.performed += ctx => PlayerFireHook();
+                break;
+            case 2:
+                _input = new PlayerControls();
+                _input.Player2.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+                _input.Player2.Move.canceled += ctx => moveInput = Vector2.zero;
+                _input.Player2.FireHook.performed += ctx => PlayerFireHook();
+                break;
+            case 3:
+                _input = new PlayerControls();
+                _input.Player3.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+                _input.Player3.Move.canceled += ctx => moveInput = Vector2.zero;
+                _input.Player3.FireHook.performed += ctx => PlayerFireHook();
+                break;
+            case 4:
+                _input = new PlayerControls();
+                _input.Player4.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+                _input.Player4.Move.canceled += ctx => moveInput = Vector2.zero;
+                _input.Player4.FireHook.performed += ctx => PlayerFireHook();
+                break;
+        }
+    }
+
 
     private void OnEnable()
     {
-        _input.Gameplay.Enable();
+        switch (_actorPlayer.playerId)
+        {
+            case 1:
+                _input.Player1.Enable();
+                break;
+            case 2:
+                _input.Player2.Enable();
+                break;
+            case 3:
+                _input.Player3.Enable();
+                break;
+            case 4:
+                _input.Player4.Enable();
+                break;
+        }
     }
 
     private void OnDisable()
     {
-        _input.Gameplay.Disable();
+        switch (_actorPlayer.playerId)
+        {
+            case 1:
+                _input.Player1.Disable();
+                break;
+            case 2:
+                _input.Player2.Disable();
+                break;
+            case 3:
+                _input.Player3.Disable();
+                break;
+            case 4:
+                _input.Player4.Disable();
+                break;
+        }
     }
 
     void FixedUpdate()
@@ -51,9 +107,11 @@ public class PlayerInputKrister : MonoBehaviour
     }
 
 
+    // TO DO ADD ROTATION INPUT FOR ASTEROID MOVEMENT
+
     void PlayerFireHook()
     {
-        _grappleHookShooter.GrappleShoot();
+        _grappleHookShooter.GrappleShoot(); // HOOKSHOOTER CONTROLS ASTEROID MOVEMENT
     }
 }
 
