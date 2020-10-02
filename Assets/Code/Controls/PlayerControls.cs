@@ -315,6 +315,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""FireShoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa1efd33-0930-47c4-bda8-92f27e206d7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -559,6 +567,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""FireHook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2abc49bf-ef59-46f7-aa28-8db6875b5b4c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2311475-3789-4af2-bd08-66ada8003797"",
+                    ""path"": ""<Gamepad>{Player1}/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -586,6 +616,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""FireHook"",
                     ""type"": ""Button"",
                     ""id"": ""f8e27ca0-4bb7-47aa-a250-3aac89642d14"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FireShoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""58b9daa5-ec81-4373-8385-b51f8ecfba6d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -844,6 +882,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""FireHook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43cab3c4-8e18-4cff-81d2-6d8fff2a6f95"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e4948dc-40c4-4dd7-bb6b-74dc5b99ec82"",
+                    ""path"": ""<Gamepad>{Player2}/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -871,6 +931,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""FireHook"",
                     ""type"": ""Button"",
                     ""id"": ""4790def2-0a24-455c-83ea-398e12a7c5b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FireShoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""61557646-e48a-4c0a-bb49-497ae74e78cb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -1118,6 +1186,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""FireHook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea91d648-80fd-4459-8f49-3deaf3683e6d"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1145,6 +1224,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""FireHook"",
                     ""type"": ""Button"",
                     ""id"": ""bfc9935e-86f3-4d2f-93c1-d1756872e1b7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""FireShoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""69adef8e-b7ac-49e9-89a5-769037d15d47"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -1392,6 +1479,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""FireHook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca544adc-3706-4587-8cfa-102089e8a57e"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1408,21 +1506,25 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Rotate = m_Player1.FindAction("Rotate", throwIfNotFound: true);
         m_Player1_FireHook = m_Player1.FindAction("FireHook", throwIfNotFound: true);
+        m_Player1_FireShoot = m_Player1.FindAction("FireShoot", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Rotate = m_Player2.FindAction("Rotate", throwIfNotFound: true);
         m_Player2_FireHook = m_Player2.FindAction("FireHook", throwIfNotFound: true);
+        m_Player2_FireShoot = m_Player2.FindAction("FireShoot", throwIfNotFound: true);
         // Player3
         m_Player3 = asset.FindActionMap("Player3", throwIfNotFound: true);
         m_Player3_Move = m_Player3.FindAction("Move", throwIfNotFound: true);
         m_Player3_Rotate = m_Player3.FindAction("Rotate", throwIfNotFound: true);
         m_Player3_FireHook = m_Player3.FindAction("FireHook", throwIfNotFound: true);
+        m_Player3_FireShoot = m_Player3.FindAction("FireShoot", throwIfNotFound: true);
         // Player4
         m_Player4 = asset.FindActionMap("Player4", throwIfNotFound: true);
         m_Player4_Move = m_Player4.FindAction("Move", throwIfNotFound: true);
         m_Player4_Rotate = m_Player4.FindAction("Rotate", throwIfNotFound: true);
         m_Player4_FireHook = m_Player4.FindAction("FireHook", throwIfNotFound: true);
+        m_Player4_FireShoot = m_Player4.FindAction("FireShoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1524,6 +1626,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Rotate;
     private readonly InputAction m_Player1_FireHook;
+    private readonly InputAction m_Player1_FireShoot;
     public struct Player1Actions
     {
         private @PlayerControls m_Wrapper;
@@ -1531,6 +1634,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player1_Move;
         public InputAction @Rotate => m_Wrapper.m_Player1_Rotate;
         public InputAction @FireHook => m_Wrapper.m_Player1_FireHook;
+        public InputAction @FireShoot => m_Wrapper.m_Player1_FireShoot;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1549,6 +1653,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFireHook;
                 @FireHook.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFireHook;
                 @FireHook.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFireHook;
+                @FireShoot.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnFireShoot;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -1562,6 +1669,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started += instance.OnFireHook;
                 @FireHook.performed += instance.OnFireHook;
                 @FireHook.canceled += instance.OnFireHook;
+                @FireShoot.started += instance.OnFireShoot;
+                @FireShoot.performed += instance.OnFireShoot;
+                @FireShoot.canceled += instance.OnFireShoot;
             }
         }
     }
@@ -1573,6 +1683,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player2_Move;
     private readonly InputAction m_Player2_Rotate;
     private readonly InputAction m_Player2_FireHook;
+    private readonly InputAction m_Player2_FireShoot;
     public struct Player2Actions
     {
         private @PlayerControls m_Wrapper;
@@ -1580,6 +1691,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player2_Move;
         public InputAction @Rotate => m_Wrapper.m_Player2_Rotate;
         public InputAction @FireHook => m_Wrapper.m_Player2_FireHook;
+        public InputAction @FireShoot => m_Wrapper.m_Player2_FireShoot;
         public InputActionMap Get() { return m_Wrapper.m_Player2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1598,6 +1710,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnFireHook;
                 @FireHook.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnFireHook;
                 @FireHook.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnFireHook;
+                @FireShoot.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnFireShoot;
             }
             m_Wrapper.m_Player2ActionsCallbackInterface = instance;
             if (instance != null)
@@ -1611,6 +1726,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started += instance.OnFireHook;
                 @FireHook.performed += instance.OnFireHook;
                 @FireHook.canceled += instance.OnFireHook;
+                @FireShoot.started += instance.OnFireShoot;
+                @FireShoot.performed += instance.OnFireShoot;
+                @FireShoot.canceled += instance.OnFireShoot;
             }
         }
     }
@@ -1622,6 +1740,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player3_Move;
     private readonly InputAction m_Player3_Rotate;
     private readonly InputAction m_Player3_FireHook;
+    private readonly InputAction m_Player3_FireShoot;
     public struct Player3Actions
     {
         private @PlayerControls m_Wrapper;
@@ -1629,6 +1748,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player3_Move;
         public InputAction @Rotate => m_Wrapper.m_Player3_Rotate;
         public InputAction @FireHook => m_Wrapper.m_Player3_FireHook;
+        public InputAction @FireShoot => m_Wrapper.m_Player3_FireShoot;
         public InputActionMap Get() { return m_Wrapper.m_Player3; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1647,6 +1767,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started -= m_Wrapper.m_Player3ActionsCallbackInterface.OnFireHook;
                 @FireHook.performed -= m_Wrapper.m_Player3ActionsCallbackInterface.OnFireHook;
                 @FireHook.canceled -= m_Wrapper.m_Player3ActionsCallbackInterface.OnFireHook;
+                @FireShoot.started -= m_Wrapper.m_Player3ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.performed -= m_Wrapper.m_Player3ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.canceled -= m_Wrapper.m_Player3ActionsCallbackInterface.OnFireShoot;
             }
             m_Wrapper.m_Player3ActionsCallbackInterface = instance;
             if (instance != null)
@@ -1660,6 +1783,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started += instance.OnFireHook;
                 @FireHook.performed += instance.OnFireHook;
                 @FireHook.canceled += instance.OnFireHook;
+                @FireShoot.started += instance.OnFireShoot;
+                @FireShoot.performed += instance.OnFireShoot;
+                @FireShoot.canceled += instance.OnFireShoot;
             }
         }
     }
@@ -1671,6 +1797,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player4_Move;
     private readonly InputAction m_Player4_Rotate;
     private readonly InputAction m_Player4_FireHook;
+    private readonly InputAction m_Player4_FireShoot;
     public struct Player4Actions
     {
         private @PlayerControls m_Wrapper;
@@ -1678,6 +1805,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player4_Move;
         public InputAction @Rotate => m_Wrapper.m_Player4_Rotate;
         public InputAction @FireHook => m_Wrapper.m_Player4_FireHook;
+        public InputAction @FireShoot => m_Wrapper.m_Player4_FireShoot;
         public InputActionMap Get() { return m_Wrapper.m_Player4; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1696,6 +1824,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started -= m_Wrapper.m_Player4ActionsCallbackInterface.OnFireHook;
                 @FireHook.performed -= m_Wrapper.m_Player4ActionsCallbackInterface.OnFireHook;
                 @FireHook.canceled -= m_Wrapper.m_Player4ActionsCallbackInterface.OnFireHook;
+                @FireShoot.started -= m_Wrapper.m_Player4ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.performed -= m_Wrapper.m_Player4ActionsCallbackInterface.OnFireShoot;
+                @FireShoot.canceled -= m_Wrapper.m_Player4ActionsCallbackInterface.OnFireShoot;
             }
             m_Wrapper.m_Player4ActionsCallbackInterface = instance;
             if (instance != null)
@@ -1709,6 +1840,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @FireHook.started += instance.OnFireHook;
                 @FireHook.performed += instance.OnFireHook;
                 @FireHook.canceled += instance.OnFireHook;
+                @FireShoot.started += instance.OnFireShoot;
+                @FireShoot.performed += instance.OnFireShoot;
+                @FireShoot.canceled += instance.OnFireShoot;
             }
         }
     }
@@ -1724,23 +1858,27 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFireHook(InputAction.CallbackContext context);
+        void OnFireShoot(InputAction.CallbackContext context);
     }
     public interface IPlayer2Actions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFireHook(InputAction.CallbackContext context);
+        void OnFireShoot(InputAction.CallbackContext context);
     }
     public interface IPlayer3Actions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFireHook(InputAction.CallbackContext context);
+        void OnFireShoot(InputAction.CallbackContext context);
     }
     public interface IPlayer4Actions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnFireHook(InputAction.CallbackContext context);
+        void OnFireShoot(InputAction.CallbackContext context);
     }
 }

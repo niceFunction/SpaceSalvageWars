@@ -302,6 +302,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "FireShoot",
+                    "type": "Button",
+                    "id": "aa1efd33-0930-47c4-bda8-92f27e206d7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -546,6 +554,28 @@
                     "action": "FireHook",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2abc49bf-ef59-46f7-aa28-8db6875b5b4c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2311475-3789-4af2-bd08-66ada8003797",
+                    "path": "<Gamepad>{Player1}/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -573,6 +603,14 @@
                     "name": "FireHook",
                     "type": "Button",
                     "id": "f8e27ca0-4bb7-47aa-a250-3aac89642d14",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FireShoot",
+                    "type": "Button",
+                    "id": "58b9daa5-ec81-4373-8385-b51f8ecfba6d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -831,6 +869,28 @@
                     "action": "FireHook",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43cab3c4-8e18-4cff-81d2-6d8fff2a6f95",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e4948dc-40c4-4dd7-bb6b-74dc5b99ec82",
+                    "path": "<Gamepad>{Player2}/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -858,6 +918,14 @@
                     "name": "FireHook",
                     "type": "Button",
                     "id": "4790def2-0a24-455c-83ea-398e12a7c5b6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FireShoot",
+                    "type": "Button",
+                    "id": "61557646-e48a-4c0a-bb49-497ae74e78cb",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -1105,6 +1173,17 @@
                     "action": "FireHook",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea91d648-80fd-4459-8f49-3deaf3683e6d",
+                    "path": "<Keyboard>/comma",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1132,6 +1211,14 @@
                     "name": "FireHook",
                     "type": "Button",
                     "id": "bfc9935e-86f3-4d2f-93c1-d1756872e1b7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "FireShoot",
+                    "type": "Button",
+                    "id": "69adef8e-b7ac-49e9-89a5-769037d15d47",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -1377,6 +1464,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "FireHook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca544adc-3706-4587-8cfa-102089e8a57e",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

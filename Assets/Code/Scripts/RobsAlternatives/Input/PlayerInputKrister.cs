@@ -40,24 +40,32 @@ public class PlayerInputKrister : MonoBehaviour
                 _input.Player1.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player1.Move.canceled += ctx => moveInput = Vector2.zero;
                 _input.Player1.FireHook.performed += ctx => PlayerFireHook();
+                _input.Player1.FireShoot.performed += ctx => PlayerFireShoot(true);
+                _input.Player1.FireShoot.canceled += ctx => PlayerFireShoot(false);
                 break;
             case 2:
                 _input = new PlayerControls();
                 _input.Player2.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player2.Move.canceled += ctx => moveInput = Vector2.zero;
                 _input.Player2.FireHook.performed += ctx => PlayerFireHook();
+                _input.Player2.FireShoot.performed += ctx => PlayerFireShoot(true);
+                _input.Player2.FireShoot.canceled += ctx => PlayerFireShoot(false);
                 break;
             case 3:
                 _input = new PlayerControls();
                 _input.Player3.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player3.Move.canceled += ctx => moveInput = Vector2.zero;
                 _input.Player3.FireHook.performed += ctx => PlayerFireHook();
+                _input.Player3.FireShoot.performed += ctx => PlayerFireShoot(true);
+                _input.Player3.FireShoot.canceled += ctx => PlayerFireShoot(false);
                 break;
             case 4:
                 _input = new PlayerControls();
                 _input.Player4.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player4.Move.canceled += ctx => moveInput = Vector2.zero;
                 _input.Player4.FireHook.performed += ctx => PlayerFireHook();
+                _input.Player4.FireShoot.performed += ctx => PlayerFireShoot(true);
+                _input.Player4.FireShoot.canceled += ctx => PlayerFireShoot(false);
                 break;
         }
     }
@@ -112,6 +120,18 @@ public class PlayerInputKrister : MonoBehaviour
     void PlayerFireHook()
     {
         _grappleHookShooter.GrappleShoot(); // HOOKSHOOTER CONTROLS ASTEROID MOVEMENT
+    }
+
+    void PlayerFireShoot(bool start)
+    {
+        if (start)
+        {
+            _weapon.StartShooting();
+        }
+        else
+        {
+            _weapon.StopShooting();
+        }
     }
 }
 

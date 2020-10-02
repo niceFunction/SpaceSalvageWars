@@ -63,8 +63,8 @@ public class Weapon : MonoBehaviour
         _timeBetweenShots = 60f / roundsPerMinute;
 
         // Move this to Input script later.
-        fireWeapon.performed += ctx => StartShooting();
-        fireWeapon.canceled += ctx => StopShooting();
+        //fireWeapon.performed += ctx => StartShooting();
+        //fireWeapon.canceled += ctx => StopShooting();
     }
 
     // Move this to Input script later.
