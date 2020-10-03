@@ -472,7 +472,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""8c61e67c-71d4-48d2-b439-6b39e3cfb7d6"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""path"": ""<Gamepad>{Player1}/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -483,7 +483,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""948655f5-1d84-4811-b94c-d617cbae4873"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""path"": ""<Gamepad>{Player1}/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -776,7 +776,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""cd2e2338-b8fa-4990-8e8c-bc11ae27186c"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""path"": ""<Gamepad>{Player2}/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -787,7 +787,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""e7009b42-4ebd-4575-90ed-eae4eded7ee6"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""path"": ""<Gamepad>{Player2}/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -831,7 +831,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""8bd08e89-93e1-4c4d-a844-de73184cc6b6"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -842,7 +842,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""ad023ff4-e0f2-4889-9b48-8b8d3daa88eb"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1146,7 +1146,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""fea597a2-88b7-4242-b61f-84da16a634bd"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/u"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1157,7 +1157,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""ed9c1b33-a40f-4c73-bf21-9a2b824f3c83"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1439,7 +1439,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""df301226-eae7-4167-bb90-616f8243dc6a"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/numpad7"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1450,7 +1450,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""2e05c897-a078-456a-8e01-73f09eb74b02"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/numpad9"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

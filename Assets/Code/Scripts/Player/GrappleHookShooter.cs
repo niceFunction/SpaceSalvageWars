@@ -13,6 +13,8 @@ public class GrappleHookShooter : MonoBehaviour
     public SpringJoint2D hookSpring;
     public ActorAsteroid asteroidActor;
 
+    public float grappleHookAsteroidMovementAmount = 30f;
+
     private GameObject _hook;
     private GrappleVariant _grapple;
 
@@ -28,6 +30,13 @@ public class GrappleHookShooter : MonoBehaviour
     public AudioSource _grappleShooterSFX;
     public AudioClip decoupleSFX;
 
+    // Asteroid Movement Input
+    private PlayerInputKrister _input;
+
+    private void Awake()
+    {
+        _input = GetComponent<PlayerInputKrister>();
+    }
 
     public void Start()
     {
@@ -51,6 +60,15 @@ public class GrappleHookShooter : MonoBehaviour
         }
     }
 
+
+    private void FixedUpdate()
+    {
+        // Asteroid Movement
+        if (asteroidActor != null)
+        {
+            asteroidActor.body.AddForce(new Vector2(_input.rotationInput.x * grappleHookAsteroidMovementAmount, 0), ForceMode2D.Force);
+        }
+    }
 
     public void GrappleShoot()
     {

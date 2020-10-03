@@ -2872,6 +2872,7 @@ MonoBehaviour:
   hookForce: 20
   hookSpring: {fileID: 1412941033}
   asteroidActor: {fileID: 0}
+  grappleHookAsteroidMovementAmount: 30
   hookReleased: 0
   hookConnected: 0
   lineAndPlayer: {x: 0, y: 0}
@@ -2955,6 +2956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {x: 0, y: 0}
+  rotationInput: {x: 0, y: 0}
 --- !u!114 &1412941040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3623,6 +3625,7 @@ MonoBehaviour:
   hookForce: 20
   hookSpring: {fileID: 1829868759}
   asteroidActor: {fileID: 0}
+  grappleHookAsteroidMovementAmount: 30
   hookReleased: 0
   hookConnected: 0
   lineAndPlayer: {x: 0, y: 0}
@@ -3706,6 +3709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {x: 0, y: 0}
+  rotationInput: {x: 0, y: 0}
 --- !u!114 &1829868766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4279,6 +4283,7 @@ MonoBehaviour:
   hookForce: 20
   hookSpring: {fileID: 2082440120}
   asteroidActor: {fileID: 0}
+  grappleHookAsteroidMovementAmount: 30
   hookReleased: 0
   hookConnected: 0
   lineAndPlayer: {x: 0, y: 0}
@@ -4362,6 +4367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {x: 0, y: 0}
+  rotationInput: {x: 0, y: 0}
 --- !u!114 &2082440127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4693,6 +4699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveInput: {x: 0, y: 0}
+  rotationInput: {x: 0, y: 0}
 --- !u!231 &2456097647147182980
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -4730,6 +4737,7 @@ MonoBehaviour:
   hookForce: 20
   hookSpring: {fileID: 2456097647147182980}
   asteroidActor: {fileID: 0}
+  grappleHookAsteroidMovementAmount: 30
   hookReleased: 0
   hookConnected: 0
   lineAndPlayer: {x: 0, y: 0}

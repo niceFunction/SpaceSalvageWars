@@ -18,6 +18,7 @@ public class PlayerInputKrister : MonoBehaviour
     private Keyboard keyboard;
 
     public Vector2 moveInput;
+    public Vector2 rotationInput;
 
 
     private void Awake()
@@ -39,6 +40,10 @@ public class PlayerInputKrister : MonoBehaviour
                 _input = new PlayerControls();
                 _input.Player1.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player1.Move.canceled += ctx => moveInput = Vector2.zero;
+
+                _input.Player1.Rotate.performed += ctx => rotationInput = ctx.ReadValue<Vector2>();
+                _input.Player1.Rotate.canceled += ctx => rotationInput = Vector2.zero;
+
                 _input.Player1.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player1.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player1.FireShoot.canceled += ctx => PlayerFireShoot(false);
@@ -47,6 +52,10 @@ public class PlayerInputKrister : MonoBehaviour
                 _input = new PlayerControls();
                 _input.Player2.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player2.Move.canceled += ctx => moveInput = Vector2.zero;
+
+                _input.Player2.Rotate.performed += ctx => rotationInput = ctx.ReadValue<Vector2>();
+                _input.Player2.Rotate.canceled += ctx => rotationInput = Vector2.zero;
+
                 _input.Player2.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player2.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player2.FireShoot.canceled += ctx => PlayerFireShoot(false);
@@ -55,6 +64,10 @@ public class PlayerInputKrister : MonoBehaviour
                 _input = new PlayerControls();
                 _input.Player3.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player3.Move.canceled += ctx => moveInput = Vector2.zero;
+
+                _input.Player3.Rotate.performed += ctx => rotationInput = ctx.ReadValue<Vector2>();
+                _input.Player3.Rotate.canceled += ctx => rotationInput = Vector2.zero;
+
                 _input.Player3.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player3.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player3.FireShoot.canceled += ctx => PlayerFireShoot(false);
@@ -63,6 +76,10 @@ public class PlayerInputKrister : MonoBehaviour
                 _input = new PlayerControls();
                 _input.Player4.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player4.Move.canceled += ctx => moveInput = Vector2.zero;
+
+                _input.Player4.Rotate.performed += ctx => rotationInput = ctx.ReadValue<Vector2>();
+                _input.Player4.Rotate.canceled += ctx => rotationInput = Vector2.zero;
+
                 _input.Player4.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player4.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player4.FireShoot.canceled += ctx => PlayerFireShoot(false);
@@ -111,7 +128,8 @@ public class PlayerInputKrister : MonoBehaviour
 
     void FixedUpdate()
     {
-        _shipMovement.movementInput.Set(moveInput.x, moveInput.y) ;
+        _shipMovement.movementInput.Set(moveInput.x, moveInput.y);
+        rotationInput.Set(rotationInput.x,rotationInput.y);
     }
 
 
