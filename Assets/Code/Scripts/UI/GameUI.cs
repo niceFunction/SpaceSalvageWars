@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameUI : MonoBehaviour
 {
+    public InputAction gameInstructions; // Add this to input
+
     public int scoreToWin = 1;
 
     public PlayerBase player1Base;
@@ -20,6 +23,15 @@ public class GameUI : MonoBehaviour
     public GameObject playerWin;
     public Text playerWinText;
 
+    public GameObject gameInstructionText;
+
+
+    private void Awake()
+    {
+        gameInstructions.performed += ctx => ShowHowToPlay(true);
+        gameInstructions.canceled += ctx => ShowHowToPlay(false);
+    }
+
     // Sign up playerbases with UI score
     void Start()
     {
@@ -27,6 +39,16 @@ public class GameUI : MonoBehaviour
         player2Base.OnPlayerScoreHandler += UpdateUI;
         player3Base.OnPlayerScoreHandler += UpdateUI;
         player4Base.OnPlayerScoreHandler += UpdateUI;
+    }
+
+    void OnEnable()
+    {
+        gameInstructions.Enable();
+    }
+
+    void OnDisable()
+    {
+        gameInstructions.Disable();
     }
 
     public void UpdateUI(int playerId, int score)
@@ -55,6 +77,11 @@ public class GameUI : MonoBehaviour
             playerWinText.text = ("Player "+ playerId.ToString() + " Wins!");
         }
 
+    }
+
+    private void ShowHowToPlay(bool activate)
+    {
+        gameInstructionText.SetActive(activate);
     }
 
     public void ReturnToMainMenu()
