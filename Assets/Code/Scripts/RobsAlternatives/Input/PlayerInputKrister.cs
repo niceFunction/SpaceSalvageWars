@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.InputSystem.Users;
+using UnityEngine.PlayerLoop;
 
 [RequireComponent(typeof(MovementKrister)), RequireComponent(typeof(Weapon))]
 public class PlayerInputKrister : MonoBehaviour
@@ -38,6 +39,7 @@ public class PlayerInputKrister : MonoBehaviour
         {
             case 1:
                 _input = new PlayerControls();
+
                 _input.Player1.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
                 _input.Player1.Move.canceled += ctx => moveInput = Vector2.zero;
 
@@ -47,6 +49,7 @@ public class PlayerInputKrister : MonoBehaviour
                 _input.Player1.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player1.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player1.FireShoot.canceled += ctx => PlayerFireShoot(false);
+
                 break;
             case 2:
                 _input = new PlayerControls();
@@ -59,6 +62,7 @@ public class PlayerInputKrister : MonoBehaviour
                 _input.Player2.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player2.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player2.FireShoot.canceled += ctx => PlayerFireShoot(false);
+
                 break;
             case 3:
                 _input = new PlayerControls();
@@ -71,6 +75,7 @@ public class PlayerInputKrister : MonoBehaviour
                 _input.Player3.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player3.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player3.FireShoot.canceled += ctx => PlayerFireShoot(false);
+
                 break;
             case 4:
                 _input = new PlayerControls();
@@ -83,6 +88,7 @@ public class PlayerInputKrister : MonoBehaviour
                 _input.Player4.FireHook.performed += ctx => PlayerFireHook();
                 _input.Player4.FireShoot.performed += ctx => PlayerFireShoot(true);
                 _input.Player4.FireShoot.canceled += ctx => PlayerFireShoot(false);
+
                 break;
         }
     }

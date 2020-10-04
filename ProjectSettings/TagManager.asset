@@ -39,9 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: GrappleHook
-    uniqueID: 2841438837
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GrappleHook
+    uniqueID: 2841438837
     locked: 0
