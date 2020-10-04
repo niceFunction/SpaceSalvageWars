@@ -76,7 +76,6 @@ public class GrappleHookShooter : MonoBehaviour
         {
             hookReleased = true;
             lineRenderer.enabled = true;
-            Debug.Log("Firing Hook");
             _hook = Instantiate(grappleHookPrefab,
                                 grapplePointTransform.position,
                                 grapplePointTransform.rotation);
@@ -105,7 +104,6 @@ public class GrappleHookShooter : MonoBehaviour
             asteroidActor = null;
         }
         hookSpring.enabled = false;
-        Debug.Log("Destroying Hook");
         if(_hook != null)
         {
             Destroy(_hook);
