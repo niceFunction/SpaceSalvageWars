@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class RandomObjectSpawner : MonoBehaviour
 {
     public bool isAsteroidSpawner = true;
+    public bool isIceCubeSpawner = false;
 
     public bool infiniteTimerLoop = true;
     public bool isOneShot = false;
@@ -96,7 +98,14 @@ public class RandomObjectSpawner : MonoBehaviour
         {
             if (spawnObjectsIntoContainer)
             {
-                _currentObjectsSpawned = objectsSpawnerContainer.childCount;
+                if (isIceCubeSpawner)
+                {
+                    // TO DO Change so that only big icecube counts as _currentObjectsSpawned
+                }
+                else
+                {
+                    _currentObjectsSpawned = objectsSpawnerContainer.childCount;
+                }
             }
             StartCoroutine("SpawnTimer"); // TIMER RESTART LOOP
         }
@@ -105,7 +114,7 @@ public class RandomObjectSpawner : MonoBehaviour
     private void SpawnObjectIntoContainer()
     {
         //Pick Random Object To Spawn from objectsToSpawn Array
-        GameObject objectToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Length)];
+        GameObject objectToSpawn = objectsToSpawn[UnityEngine.Random.Range(0, objectsToSpawn.Length)];
 
         var spawnObjectInstance = Instantiate(objectToSpawn, objectsSpawnerContainer.position,objectsSpawnerContainer.rotation,objectsSpawnerContainer);
         float newRandomOffsetX = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxX.x, randomObjectSpawnOffsetMinMaxX.y);
@@ -114,8 +123,8 @@ public class RandomObjectSpawner : MonoBehaviour
 
         if (isAsteroidSpawner && isRandomAddForceOnEntrance)
         {
-            spawnObjectInstance.GetComponent<ActorAsteroid>().body.AddForce(new Vector2(Random.Range(randomAddForceEntranceMinMaxX.x, randomAddForceEntranceMinMaxX.y),
-                                                                                        Random.Range(randomAddForceEntranceMinMaxY.x, randomAddForceEntranceMinMaxY.y)));
+            spawnObjectInstance.GetComponent<ActorAsteroid>().body.AddForce(new Vector2(UnityEngine.Random.Range(randomAddForceEntranceMinMaxX.x, randomAddForceEntranceMinMaxX.y),
+                                                                                        UnityEngine.Random.Range(randomAddForceEntranceMinMaxY.x, randomAddForceEntranceMinMaxY.y)));
         }
         
         _currentObjectsSpawned = objectsSpawnerContainer.childCount;
@@ -133,7 +142,7 @@ public class RandomObjectSpawner : MonoBehaviour
     private void SpawnObject()
     {
         //Pick Random Object To Spawn from objectsToSpawn Array
-        GameObject objectToSpawn = objectsToSpawn[Random.Range(0, objectsToSpawn.Length)];
+        GameObject objectToSpawn = objectsToSpawn[UnityEngine.Random.Range(0, objectsToSpawn.Length)];
 
         var spawnObjectInstance = Instantiate(objectToSpawn, _transform.position, _transform.rotation);
         float newRandomOffsetX = UnityEngine.Random.Range(randomObjectSpawnOffsetMinMaxX.x, randomObjectSpawnOffsetMinMaxX.y);
